@@ -7,4 +7,6 @@
 
 enum ParseError: Error {
     case parseJSONDecoderFailed
+    case parseResourceNameToURLFailed
+    case parseURLToDataFailed
 }

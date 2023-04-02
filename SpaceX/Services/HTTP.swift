@@ -11,16 +11,11 @@ final class HTTP {
     private init() {}
     
     /// Sending the HTTP request to the server and receives HTTP response with valid data, if the status code is valid.
-    static func requestResponse(_ urlAddress: String, statusCode: Int) async -> Data? {
-        do {
+    static func requestResponse(_ urlAddress: String, statusCode: Int) async throws -> Data? {
             guard let url = URL(string: urlAddress) else { return nil }
             let (data, response) = try await URLSession.shared.data(from: url)
             try checkStatusCode(response: response, statusCode: statusCode)
             return data
-        } catch {
-            print("Error: \(error.localizedDescription)")
-            return nil
-        }
     }
     
     /// Checking the desired status-code

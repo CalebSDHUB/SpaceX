@@ -13,7 +13,12 @@ final class LaunchScreenController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .orange
         Task {
-            guard let launchViewModels = await Webservice.shared.fetch(resourceName: Constant.URL.spaceX) else { return }
+            do {
+                let launchViewModels = try await ServiceFactory.create().fetch(resourceName: Constant.URL.spaceX)
+                print(launchViewModels.first?.failureReasons)
+            } catch {
+                print(error.localizedDescription)
+            }
         }
     }
 }
