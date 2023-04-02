@@ -32,7 +32,7 @@ final class LaunchScreenTableViewController: UITableViewController {
         cell.accessoryType = .disclosureIndicator
         
         var configuration = cell.defaultContentConfiguration()
-        let timeText = launchViewModel.wikipediaURL
+        let timeText = launchViewModel.LaunchDate
         configuration.text = timeText
         
         cell.contentConfiguration = configuration
