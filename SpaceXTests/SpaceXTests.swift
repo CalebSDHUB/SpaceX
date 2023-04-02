@@ -8,29 +8,24 @@
 import XCTest
 @testable import SpaceX
 
+/// IMPORTANT: Remember to activate -test in "Edit scheme" to use the MockService for unit test, instead of WebService.for unit test.
+/// The tests is only ment for the MockService, so failing to select -test will fail the test unwanted.
 final class SpaceXTests: XCTestCase {
+    
+    private var service: Service!
 
-    override func setUpWithError() throws {
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    override func setUp() {
+        service = ServiceFactory.create()
     }
-
-    override func tearDownWithError() throws {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
+    override func tearDown() {}
+    
+    func test_mock_service_successful() async {
+        let launchViewModels = try? await service.fetch(resourceName: Constant.File.ResourceName.spaceXLaunch)
+        XCTAssertNotNil(launchViewModels)
     }
-
-    func testExample() throws {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-        // Any test you write for XCTest can be annotated as throws and async.
-        // Mark your test throws to produce an unexpected failure when your test encounters an uncaught error.
-        // Mark your test async to allow awaiting for asynchronous code to complete. Check the results with assertions afterwards.
+    
+    func test_mock_service_falied() async {
+        let launchViewModels = try? await service.fetch(resourceName: "wrong_resource_name")
+        XCTAssertNil(launchViewModels)
     }
-
-    func testPerformanceExample() throws {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-
 }

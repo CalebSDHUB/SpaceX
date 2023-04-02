@@ -12,7 +12,7 @@ final class MockWebservice: Service {
     
     func fetch(resourceName: String) async throws -> [LaunchViewModel] {
             try await Task.sleep(for: Duration.milliseconds(200))
-            guard let launchModels = try File.readJSON(type: [LaunchModel].self, resourceName: Constant.File.ResourceName.spaceXLaunch) else { throw FileError.readJSONFileFailure }
+            guard let launchModels = try File.readJSON(type: [LaunchModel].self, resourceName: resourceName) else { throw FileError.readJSONFileFailure }
             return launchModels.map(LaunchViewModel.init)
     }
 }

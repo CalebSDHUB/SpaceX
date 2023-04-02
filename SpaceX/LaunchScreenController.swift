@@ -15,6 +15,7 @@ final class LaunchScreenController: UIViewController {
         Task {
             do {
                 let launchViewModels = try await ServiceFactory.create().fetch(resourceName: Constant.URL.spaceX)
+                print(launchViewModels.first?.failureReasons)
             } catch {
                 print(error.localizedDescription)
             }
