@@ -11,14 +11,9 @@ import Foundation
 final class File {
     private init() {}
     /// Read JSON file
-    static func readJSON<T: Decodable>(type: T.Type,  resourceName: String) -> T? {
-        do {
+    static func readJSON<T: Decodable>(type: T.Type,  resourceName: String) throws -> T? {
             guard let url = Bundle.main.url(forResource: resourceName, withExtension: Constant.File.Format.json) else { throw ParseError.parseResourceNameToURLFailed }
             let data = try Data(contentsOf: url)
-            return Parse.decodeJSON(type: T.self, data: data)
-        } catch {
-            print(error.localizedDescription)
-            return nil
-        }
+            return try Parse.decodeJSON(type: T.self, data: data)
     }
 }
