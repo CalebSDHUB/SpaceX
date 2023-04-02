@@ -62,8 +62,8 @@ struct LaunchModel: Decodable {
 
     struct Links: Decodable {
         let patch: Patch?
-//        let reddit: Reddit?
-//        let flickr: Flickr?
+        let reddit: Reddit?
+        let flickr: Flickr?
         let presskit: String? // NSNULL
         let webcast: String?
         let youtubeID: String?
@@ -71,22 +71,22 @@ struct LaunchModel: Decodable {
         let wikipedia: String?
     }
 
-//    struct Flickr: Decodable {
-//        let small: [String?]
-//        let original: [String?]
-//    }
+    struct Flickr: Decodable {
+        let small: [String?]
+        let original: [String?]
+    }
 
     struct Patch: Decodable {
         let small: String?
         let large: String?
     }
 
-//    struct Reddit: Decodable {
-//        let campaign: String?
-//        let launch: String?
-//        let media: String?
-//        let recovery: String?
-//    }
+    struct Reddit: Decodable {
+        let campaign: String?
+        let launch: String?
+        let media: String?
+        let recovery: String?
+    }
 }
 
 

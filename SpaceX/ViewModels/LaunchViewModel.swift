@@ -19,7 +19,7 @@ struct LaunchViewModel {
     var videoURL: String {  launchModel.links?.webcast ?? "n/a" }
     var articleURL: String { launchModel.links?.article ?? "n/a" }
     var wikipediaURL: String { launchModel.links?.wikipedia ?? "n/a" }
-    var launchDate: String { Date.unix(launchModel.staticFireDateUnix ?? 0) }
+    var launchDate: String { Date.unix(launchModel.staticFireDateUnix ?? -1) }
     var launchSuccess: Bool { launchModel.success ?? false }
     var failureReasons: [String] { launchModel.failures.map({ $0?.reason ?? "n/a" }) }
     var failureDetails: String { launchModel.details ?? "n/a" }

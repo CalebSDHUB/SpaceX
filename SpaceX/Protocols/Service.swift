@@ -6,5 +6,5 @@
 //
 
 protocol Service {
-    func fetch()
+    func fetch(resourceName: String) async -> [LaunchViewModel?]
 }

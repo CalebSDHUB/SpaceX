@@ -11,9 +11,9 @@ final class HTTP {
     private init() {}
     
     /// Sending the HTTP request to the server and receives HTTP response with valid data, if the status code is valid.
-    static func requestResponse(_ urlString: String, statusCode: Int) async -> Data? {
+    static func requestResponse(_ urlAddress: String, statusCode: Int) async -> Data? {
         do {
-            guard let url = URL(string: urlString) else { return nil }
+            guard let url = URL(string: urlAddress) else { return nil }
             let (data, response) = try await URLSession.shared.data(from: url)
             try checkStatusCode(response: response, statusCode: statusCode)
             return data

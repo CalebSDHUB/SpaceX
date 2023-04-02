@@ -12,7 +12,10 @@ final class LaunchScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .orange
-        Webservice().fetch()
+        Task {
+            let launchViewModels = await Webservice.shared.fetch(resourceName: Constant.URL.spaceX)
+            print(launchViewModels.count)
+        }
     }
 }
 
