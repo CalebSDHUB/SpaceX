@@ -18,7 +18,7 @@ final class HTTP {
             try checkStatusCode(response: response, statusCode: statusCode)
             return data
         } catch {
-            print(error.localizedDescription)
+            print("Error: \(error.localizedDescription)")
             return nil
         }
     }

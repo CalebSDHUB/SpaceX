@@ -12,6 +12,7 @@ final class LaunchScreenController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .orange
+        Webservice().fetch()
     }
 }
 

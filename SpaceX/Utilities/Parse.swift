@@ -11,12 +11,13 @@ import Foundation
 final class Parse {
     private init() {}
     /// Parsing JSON data into Swift type
-    static func decodeJSON<T: Decodable>(type: T.Type, data: Data?) throws -> T? {
+    static func decodeJSON<T: Decodable>(type: T.Type, data: Data?) -> T? {
         do {
             guard let data else { return nil }
             return try JSONDecoder().decode(T.self, from: data)
         } catch {
-            throw ParseError.parseJSONDecoderFailed
+            print("Error: \(error.localizedDescription)")
+            return nil
         }
     }
 }

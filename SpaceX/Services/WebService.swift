@@ -11,7 +11,8 @@ final class Webservice: Service {
     func fetch() {
         Task {
             let data = await HTTP.requestResponse("https://api.spacexdata.com/v5/launches", statusCode: 200)
-            let launchModel = try Parse.decodeJSON(type: LaunchModel.self, data: data)
+            let launchModel = Parse.decodeJSON(type: [LaunchModel].self, data: data)
+            print(String(describing: launchModel))
         }
     }
 }
