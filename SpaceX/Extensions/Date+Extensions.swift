@@ -8,7 +8,11 @@
 import Foundation
 
 extension Date {
-    static func unix(_ time: Int) -> String {
-        Date(timeIntervalSince1970: TimeInterval(time)).formatted(date: .abbreviated, time: .complete)
+    static func utc(_ time: String) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        guard let date = dateFormatter.date(from: time) else { return nil }
+        return date.formatted(date: .abbreviated, time: .complete)
     }
 }

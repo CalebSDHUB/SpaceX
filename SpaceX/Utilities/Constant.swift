@@ -22,4 +22,14 @@ struct Constant {
             static let spaceXLaunch = "spacex-launch"
         }
     }
+    
+    struct LaunchScreen {
+        struct Title {
+            static let name = "SpaceX Launch"
+        }
+        
+        struct Cell {
+            static let identifier = "launch_screen_cell"
+        }
+    }
 }
