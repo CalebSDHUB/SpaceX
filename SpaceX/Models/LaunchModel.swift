@@ -24,7 +24,8 @@ struct LaunchModel {
     let payloads: [String?]
     let launchpad: String?
     let flightNumber: Int?
-    let name, dateUTC: String?
+    let name: String?
+    let dateUTC: String?
     let dateUnix: Int?
     let dateLocal: Date?
     let datePrecision: String?
