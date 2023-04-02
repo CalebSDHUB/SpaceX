@@ -33,7 +33,7 @@ struct LaunchModel: Decodable {
     let cores: [Core?]
     let autoUpdate, tbd: Bool?
     let launchLibraryID: String? // NSNULL
-    let id: String?
+    let id: String
     
     struct Core: Decodable {
         let core: String?
