@@ -12,4 +12,14 @@ struct Constant {
         }
         static let spaceX = "https://api.spacexdata.com/v5/launches"
     }
+    
+    struct File {
+        struct Format {
+            static let json = "json"
+        }
+        
+        struct ResourceName {
+            static let spaceXLaunch = "spaceXLaunch"
+        }
+    }
 }
