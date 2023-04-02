@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LaunchModel {
+struct LaunchModel: Decodable {
     let fairings: Fairings?
     let links: Links?
     let staticFireDateUTC: String?
@@ -32,10 +32,10 @@ struct LaunchModel {
     let upcoming: Bool?
     let cores: [Core?]
     let autoUpdate, tbd: Bool?
-    let launchLibraryID: NSNull?
+    let launchLibraryID: String? // NSNULL
     let id: String
     
-    struct Core {
+    struct Core: Decodable {
         let core: String?
         let flight: Int?
         let gridfins: Bool?
@@ -47,41 +47,41 @@ struct LaunchModel {
         let landpad: String?
     }
 
-    struct Failure {
+    struct Failure: Decodable {
         let time: Int?
-        let altitude: NSNull?
+        let altitude: String? // NSNULL
         let reason: String?
     }
 
-    struct Fairings {
+    struct Fairings: Decodable {
         let reused: Bool?
         let recoveryAttempt: Bool?
         let recovered: Bool?
         let ships: [String?]
     }
 
-    struct Links {
+    struct Links: Decodable {
         let patch: Patch?
         let reddit: Reddit?
         let flickr: Flickr?
-        let presskit: NSNull?
+        let presskit: String? // NSNULL
         let webcast: String?
         let youtubeID: String?
         let article: String?
         let wikipedia: String?
     }
 
-    struct Flickr {
+    struct Flickr: Decodable {
         let small: [String?]
         let original: [String?]
     }
 
-    struct Patch {
+    struct Patch: Decodable {
         let small: String?
         let large: String?
     }
 
-    struct Reddit {
+    struct Reddit: Decodable {
         let campaign: String?
         let launch: String?
         let media: String?
