@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		A55F8D4329D991ED0024C1F7 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */; };
 		A55F8D4729D9AE7B0024C1F7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4629D9AE7B0024C1F7 /* Service.swift */; };
-		A55F8D4929D9AEC60024C1F7 /* Webservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4829D9AEC60024C1F7 /* Webservice.swift */; };
 		A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4B29D9B0110024C1F7 /* HTTP.swift */; };
 		A55F8D4F29D9B0E50024C1F7 /* WebserviceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4E29D9B0E50024C1F7 /* WebserviceError.swift */; };
 		A55F8D5129D9B3400024C1F7 /* ParseError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D5029D9B3400024C1F7 /* ParseError.swift */; };
 		A55F8D5429D9B8050024C1F7 /* Parse.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D5329D9B8050024C1F7 /* Parse.swift */; };
+		A55F8D5629D9B9770024C1F7 /* WebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D5529D9B9770024C1F7 /* WebService.swift */; };
 		A5C06C3C29D8ADF100A81002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3B29D8ADF100A81002 /* AppDelegate.swift */; };
 		A5C06C3E29D8ADF100A81002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3D29D8ADF100A81002 /* SceneDelegate.swift */; };
 		A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3F29D8ADF100A81002 /* LaunchScreenController.swift */; };
@@ -45,11 +45,11 @@
 /* Begin PBXFileReference section */
 		A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A55F8D4629D9AE7B0024C1F7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
-		A55F8D4829D9AEC60024C1F7 /* Webservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Webservice.swift; sourceTree = "<group>"; };
 		A55F8D4B29D9B0110024C1F7 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A55F8D4E29D9B0E50024C1F7 /* WebserviceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceError.swift; sourceTree = "<group>"; };
 		A55F8D5029D9B3400024C1F7 /* ParseError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParseError.swift; sourceTree = "<group>"; };
 		A55F8D5329D9B8050024C1F7 /* Parse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Parse.swift; sourceTree = "<group>"; };
+		A55F8D5529D9B9770024C1F7 /* WebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebService.swift; sourceTree = "<group>"; };
 		A5C06C3829D8ADF100A81002 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C06C3B29D8ADF100A81002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5C06C3D29D8ADF100A81002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -101,8 +101,8 @@
 		A55F8D4429D9A0BE0024C1F7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A55F8D4829D9AEC60024C1F7 /* Webservice.swift */,
 				A55F8D4B29D9B0110024C1F7 /* HTTP.swift */,
+				A55F8D5529D9B9770024C1F7 /* WebService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -337,9 +337,9 @@
 				A55F8D5429D9B8050024C1F7 /* Parse.swift in Sources */,
 				A5C06C6D29D9780800A81002 /* LaunchModel.swift in Sources */,
 				A55F8D4729D9AE7B0024C1F7 /* Service.swift in Sources */,
-				A55F8D4929D9AEC60024C1F7 /* Webservice.swift in Sources */,
 				A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */,
 				A5C06C3C29D8ADF100A81002 /* AppDelegate.swift in Sources */,
+				A55F8D5629D9B9770024C1F7 /* WebService.swift in Sources */,
 				A5C06C7329D9876800A81002 /* LaunchViewModel.swift in Sources */,
 				A55F8D4F29D9B0E50024C1F7 /* WebserviceError.swift in Sources */,
 				A55F8D5129D9B3400024C1F7 /* ParseError.swift in Sources */,
