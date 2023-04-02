@@ -18,6 +18,7 @@
 		A55F8D5A29D9E67A0024C1F7 /* MockService.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D5929D9E67A0024C1F7 /* MockService.swift */; };
 		A55F8D5C29D9E7790024C1F7 /* File.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D5B29D9E7790024C1F7 /* File.swift */; };
 		A55F8D5E29D9EAA00024C1F7 /* FileError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D5D29D9EAA00024C1F7 /* FileError.swift */; };
+		A55F8D6229D9F8450024C1F7 /* spacex-launch.json in Resources */ = {isa = PBXBuildFile; fileRef = A55F8D6129D9F8450024C1F7 /* spacex-launch.json */; };
 		A5C06C3C29D8ADF100A81002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3B29D8ADF100A81002 /* AppDelegate.swift */; };
 		A5C06C3E29D8ADF100A81002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3D29D8ADF100A81002 /* SceneDelegate.swift */; };
 		A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3F29D8ADF100A81002 /* LaunchScreenController.swift */; };
@@ -58,6 +59,7 @@
 		A55F8D5929D9E67A0024C1F7 /* MockService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockService.swift; sourceTree = "<group>"; };
 		A55F8D5B29D9E7790024C1F7 /* File.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = File.swift; sourceTree = "<group>"; };
 		A55F8D5D29D9EAA00024C1F7 /* FileError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileError.swift; sourceTree = "<group>"; };
+		A55F8D6129D9F8450024C1F7 /* spacex-launch.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = "spacex-launch.json"; sourceTree = "<group>"; };
 		A5C06C3829D8ADF100A81002 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C06C3B29D8ADF100A81002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5C06C3D29D8ADF100A81002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -144,6 +146,22 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		A55F8D5F29D9F8090024C1F7 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A55F8D6029D9F8130024C1F7 /* JSON */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A55F8D6029D9F8130024C1F7 /* JSON */ = {
+			isa = PBXGroup;
+			children = (
+				A55F8D6129D9F8450024C1F7 /* spacex-launch.json */,
+			);
+			path = JSON;
+			sourceTree = "<group>";
+		};
 		A5C06C2F29D8ADF100A81002 = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +185,7 @@
 		A5C06C3A29D8ADF100A81002 /* SpaceX */ = {
 			isa = PBXGroup;
 			children = (
+				A55F8D5F29D9F8090024C1F7 /* Resources */,
 				A55F8D5229D9B7EC0024C1F7 /* Utilities */,
 				A55F8D4D29D9B0D10024C1F7 /* ErrorHandling */,
 				A55F8D4529D9AE6C0024C1F7 /* Protocols */,
@@ -320,6 +339,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A55F8D6229D9F8450024C1F7 /* spacex-launch.json in Resources */,
 				A5C06C4529D8ADF200A81002 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

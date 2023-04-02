@@ -14,7 +14,7 @@ final class LaunchScreenController: UIViewController {
         view.backgroundColor = .orange
         Task {
             do {
-                guard let launchViewModels = try await Webservice.shared.fetch(resourceName: Constant.URL.spaceX) else { return }
+                let launchViewModels = try await Webservice.shared.fetch(resourceName: Constant.URL.spaceX)
             } catch {
                 print(error.localizedDescription)
             }

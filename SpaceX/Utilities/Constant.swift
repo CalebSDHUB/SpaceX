@@ -19,7 +19,7 @@ struct Constant {
         }
         
         struct ResourceName {
-            static let spaceXLaunch = "spaceXLaunch"
+            static let spaceXLaunch = "spacex-launch"
         }
     }
 }
