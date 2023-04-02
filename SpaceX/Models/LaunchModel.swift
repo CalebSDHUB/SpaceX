@@ -15,10 +15,10 @@ struct LaunchModel: Decodable {
     let net: Bool?
     let window: Int?
     let rocket: String?
-    let success: Bool
+    let success: Bool?
     let failures: [Failure?]
     let details: String?
-    let crew: [String?]
+//    let crew: [String?] // Nogo!!!!
     let ships: [String?]
     let capsules: [String?]
     let payloads: [String?]
@@ -33,7 +33,7 @@ struct LaunchModel: Decodable {
     let cores: [Core?]
     let autoUpdate, tbd: Bool?
     let launchLibraryID: String? // NSNULL
-    let id: String
+    let id: String?
     
     struct Core: Decodable {
         let core: String?
@@ -49,7 +49,7 @@ struct LaunchModel: Decodable {
 
     struct Failure: Decodable {
         let time: Int?
-        let altitude: String? // NSNULL
+        let altitude: Int? // NSNULL
         let reason: String?
     }
 
@@ -62,8 +62,8 @@ struct LaunchModel: Decodable {
 
     struct Links: Decodable {
         let patch: Patch?
-        let reddit: Reddit?
-        let flickr: Flickr?
+//        let reddit: Reddit?
+//        let flickr: Flickr?
         let presskit: String? // NSNULL
         let webcast: String?
         let youtubeID: String?
@@ -71,22 +71,22 @@ struct LaunchModel: Decodable {
         let wikipedia: String?
     }
 
-    struct Flickr: Decodable {
-        let small: [String?]
-        let original: [String?]
-    }
+//    struct Flickr: Decodable {
+//        let small: [String?]
+//        let original: [String?]
+//    }
 
     struct Patch: Decodable {
         let small: String?
         let large: String?
     }
 
-    struct Reddit: Decodable {
-        let campaign: String?
-        let launch: String?
-        let media: String?
-        let recovery: String?
-    }
+//    struct Reddit: Decodable {
+//        let campaign: String?
+//        let launch: String?
+//        let media: String?
+//        let recovery: String?
+//    }
 }
 
 

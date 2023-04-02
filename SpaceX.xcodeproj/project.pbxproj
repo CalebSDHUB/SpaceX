@@ -101,8 +101,8 @@
 		A55F8D4429D9A0BE0024C1F7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				A55F8D4B29D9B0110024C1F7 /* HTTP.swift */,
 				A55F8D5529D9B9770024C1F7 /* WebService.swift */,
+				A55F8D4B29D9B0110024C1F7 /* HTTP.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
