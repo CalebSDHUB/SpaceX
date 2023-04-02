@@ -18,7 +18,7 @@ struct LaunchModel: Decodable {
     let success: Bool?
     let failures: [Failure?]
     let details: String?
-//    let crew: [String?] // Nogo!!!!
+//    let crew: [String?] // No go !!!
     let ships: [String?]
     let capsules: [String?]
     let payloads: [String?]
