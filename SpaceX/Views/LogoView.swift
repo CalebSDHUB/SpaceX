@@ -13,14 +13,19 @@ struct LogoView: View {
     var body: some View {
         AsyncImage(url: URL(string: launchViewModel.imageLogo)) { image in
             image
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150, height: 150)
+                .imageModifier()
         } placeholder: {
             Image(systemName: Constant.Default.systemImage)
-                .resizable()
-                .scaledToFit()
-                .frame(width: 150, height: 150)
+                .imageModifier()
         }
+    }
+}
+
+private extension Image {
+    func imageModifier() -> some View {
+        self
+            .resizable()
+            .scaledToFit()
+            .frame(width: 150, height: 150)
     }
 }
