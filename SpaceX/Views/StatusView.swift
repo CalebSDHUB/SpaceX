@@ -8,7 +8,11 @@
 import SwiftUI
 
 struct StatusView: View {
-    let status: Status
+    let launchViewModel: LaunchViewModel
+    
+    var status: Status {
+        launchViewModel.launchSuccess ? .success : .failure
+    }
     
     enum Status {
         case failure
@@ -37,13 +41,5 @@ struct StatusView: View {
             .padding(.vertical)
             .background(status.color)
             .cornerRadius(10)
-            
-            .buttonStyle(.borderedProminent)
-    }
-}
-
-struct StatusView_Previews: PreviewProvider {
-    static var previews: some View {
-        StatusView(status: .success)
     }
 }

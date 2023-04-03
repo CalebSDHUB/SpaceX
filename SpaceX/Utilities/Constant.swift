@@ -33,7 +33,8 @@ struct Constant {
         }
     }
     
-    struct String {
-        static let `default` = "n/a"
+    struct Default {
+        static let string = "n/a"
+        static let systemImage = "photo"
     }
 }

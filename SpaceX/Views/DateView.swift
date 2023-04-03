@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct DateView: View {
+    let launchViewModel: LaunchViewModel
+    
     var body: some View {
-        Text(Date().formatted().description)
+        Text(launchViewModel.LaunchDate)
             .bold()
             .foregroundColor(.secondary)
-    }
-}
-
-struct DateView_Previews: PreviewProvider {
-    static var previews: some View {
-        DateView()
+            .multilineTextAlignment(.center)
     }
 }

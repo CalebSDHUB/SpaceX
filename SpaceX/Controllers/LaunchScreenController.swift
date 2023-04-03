@@ -29,7 +29,7 @@ final class LaunchScreenTableViewController: UITableViewController {
         let launchViewModel = launchViewModels[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
         cell.accessoryType = .disclosureIndicator
-        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView() }
+        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: launchViewModel) }
         return cell
     }
     

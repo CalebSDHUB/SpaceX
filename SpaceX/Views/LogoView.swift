@@ -8,20 +8,19 @@
 import SwiftUI
 
 struct LogoView: View {
+    let launchViewModel: LaunchViewModel
+    
     var body: some View {
-        AsyncImage(url: URL(string: "https://images2.imgbox.com/f9/4a/ZboXReNb_o.png")) { image in
+        AsyncImage(url: URL(string: launchViewModel.imageLogo)) { image in
             image
                 .resizable()
                 .scaledToFit()
                 .frame(width: 150, height: 150)
         } placeholder: {
-            ProgressView()
+            Image(systemName: Constant.Default.systemImage)
+                .resizable()
+                .scaledToFit()
+                .frame(width: 150, height: 150)
         }
-    }
-}
-
-struct LogoView_Previews: PreviewProvider {
-    static var previews: some View {
-        LogoView()
     }
 }

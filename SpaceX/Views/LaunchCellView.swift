@@ -8,24 +8,18 @@
 import SwiftUI
 
 struct LaunchCellView: View {
-//    let launchViewModel: LaunchViewModel
+    let launchViewModel: LaunchViewModel
     
     var body: some View {
             HStack(alignment: .top) {
-                LogoView()
+                LogoView(launchViewModel: launchViewModel)
                 VStack(alignment: .center, spacing: 10) {
-                    TitleView()
-                    DateView()
-                    StatusView(status: .success)
+                    TitleView(launchViewModel: launchViewModel)
+                    DateView(launchViewModel: launchViewModel)
+                    StatusView(launchViewModel: launchViewModel)
                         .padding(.top, 6)
                 }
                 Spacer()
             }
-    }
-}
-
-struct LaunchCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        LaunchCellView()
     }
 }

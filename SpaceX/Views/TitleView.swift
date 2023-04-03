@@ -8,15 +8,14 @@
 import SwiftUI
 
 struct TitleView: View {
+    let launchViewModel: LaunchViewModel
+    
     var body: some View {
-        Text("FalconSat")
+        Text(launchViewModel.title)
             .font(.title)
+            .multilineTextAlignment(.center)
+            .lineLimit(1)
+            .minimumScaleFactor(0.8)
             .bold()
-    }
-}
-
-struct TitleView_Previews: PreviewProvider {
-    static var previews: some View {
-        TitleView()
     }
 }
