@@ -30,14 +30,6 @@ struct LaunchCellView_Previews: PreviewProvider {
     }
 }
 
-struct DateView: View {
-    var body: some View {
-        Text(Date().formatted().description)
-            .bold()
-            .foregroundColor(.secondary)
-    }
-}
-
 struct StatusView: View {
     let status: Status
     
