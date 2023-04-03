@@ -30,14 +30,6 @@ struct LaunchCellView_Previews: PreviewProvider {
     }
 }
 
-struct TitleView: View {
-    var body: some View {
-        Text("FalconSat")
-            .font(.title)
-            .bold()
-    }
-}
-
 struct DateView: View {
     var body: some View {
         Text(Date().formatted().description)
