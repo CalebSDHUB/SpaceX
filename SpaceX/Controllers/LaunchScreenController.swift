@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// Reponsible for showing all past SpaceX launches
 final class LaunchScreenTableViewController: UITableViewController {
     private var launchViewModels: [LaunchViewModel] = []
 
