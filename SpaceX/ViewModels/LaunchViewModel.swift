@@ -15,12 +15,13 @@ struct LaunchViewModel {
     }
 
     var id: String { launchModel.id }
-    var imageLogo: String { launchModel.links?.patch?.small ?? "n/a"}
-    var videoURL: String {  launchModel.links?.webcast ?? "n/a" }
-    var articleURL: String { launchModel.links?.article ?? "n/a" }
-    var wikipediaURL: String { launchModel.links?.wikipedia ?? "n/a" }
-    var launchDate: String { Date.unix(launchModel.staticFireDateUnix ?? -1) }
+    var title: String { launchModel.name ?? Constant.Default.string }
+    var imageLogo: String { launchModel.links?.patch?.small ?? Constant.Default.string }
+    var videoURL: String {  launchModel.links?.webcast ?? Constant.Default.string }
+    var articleURL: String { launchModel.links?.article ?? Constant.Default.string }
+    var wikipediaURL: String { launchModel.links?.wikipedia ?? Constant.Default.string }
+    var LaunchDate: String { Date.utc(launchModel.dateUTC ?? Constant.Default.string) ?? Constant.Default.string }
     var launchSuccess: Bool { launchModel.success ?? false }
-    var failureReasons: [String] { launchModel.failures.map({ $0?.reason ?? "n/a" }) }
-    var failureDetails: String { launchModel.details ?? "n/a" }
+    var failureReasons: [String] { launchModel.failures.map({ $0?.reason ?? Constant.Default.string }) }
+    var failureDetails: String { launchModel.details ?? Constant.Default.string }
 }

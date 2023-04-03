@@ -8,7 +8,7 @@
 import Foundation
 
 /// Responsible for parsing data
-final class Parse {
+final class Parser {
     private init() {}
     /// Parsing JSON data into Swift type
     static func decodeJSON<T: Decodable>(type: T.Type, data: Data?) throws -> T? {

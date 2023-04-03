@@ -6,6 +6,5 @@
 //
 
 enum WebserviceError: Error {
-    case sessionFailed
     case badResponse
 }
