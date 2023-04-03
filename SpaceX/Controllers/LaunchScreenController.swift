@@ -27,14 +27,9 @@ final class LaunchScreenTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let launchViewModel = launchViewModels[indexPath.row]
-        
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
         cell.accessoryType = .disclosureIndicator
-        
-        cell.contentConfiguration = UIHostingConfiguration {
-            LaunchCellView()
-        }
-        
+        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView() }
         return cell
     }
     

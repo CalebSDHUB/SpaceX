@@ -25,11 +25,15 @@ struct Constant {
     
     struct LaunchScreen {
         struct Title {
-            static let name = "SpaceX Launch"
+            static let name = "SpaceX Launches"
         }
         
         struct Cell {
             static let identifier = "launch_screen_cell"
         }
+    }
+    
+    struct String {
+        static let `default` = "n/a"
     }
 }
