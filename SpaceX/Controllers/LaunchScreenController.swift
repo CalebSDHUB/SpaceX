@@ -5,7 +5,7 @@
 //  Created by Caleb Danielsen on 01.04.2023.
 //
 
-import UIKit
+import SwiftUI
 
 final class LaunchScreenTableViewController: UITableViewController {
     private var launchViewModels: [LaunchViewModel] = []
@@ -31,11 +31,9 @@ final class LaunchScreenTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
         cell.accessoryType = .disclosureIndicator
         
-        var configuration = cell.defaultContentConfiguration()
-        let timeText = launchViewModel.LaunchDate
-        configuration.text = timeText
-        
-        cell.contentConfiguration = configuration
+        cell.contentConfiguration = UIHostingConfiguration {
+            LaunchCellView()
+        }
         
         return cell
     }
