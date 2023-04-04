@@ -9,7 +9,7 @@ import SwiftUI
 
 /// Reponsible for showing all past SpaceX launches
 final class LaunchScreenTableViewController: UITableViewController {
-    private var launchViewModels: [ViewModel] = []
+    private var viewModels: [ViewModel] = []
     private var webManager: WebManager = WebManager()
     
     override func viewDidLoad() {
@@ -22,11 +22,11 @@ final class LaunchScreenTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        launchViewModels.count
+        viewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let launchViewModel = launchViewModels[indexPath.row] as! LaunchViewModel
+        let launchViewModel = viewModels[indexPath.row] as! LaunchViewModel
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
         cell.accessoryType = .disclosureIndicator
         cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: launchViewModel) }
@@ -37,7 +37,7 @@ final class LaunchScreenTableViewController: UITableViewController {
 extension LaunchScreenTableViewController: WebManagerDelegate {
     func update(viewModels: [ViewModel]) {
         Task {
-            launchViewModels = viewModels
+            self.viewModels = viewModels
             tableView.reloadData()
         }
     }
