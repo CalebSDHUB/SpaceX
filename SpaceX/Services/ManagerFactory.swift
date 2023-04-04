@@ -9,6 +9,7 @@
 final class ManagerFactory {
     private init() {}
     
+    /// Ready for more future managers
     static func create() -> Manager {
         WebManager.shared
     }

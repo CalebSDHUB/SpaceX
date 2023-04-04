@@ -33,6 +33,10 @@ final class LaunchScreenTableViewController: UITableViewController {
         cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: launchViewModel) }
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(UIHostingController(rootView: DetailView()), animated: true)
+    }
 }
 
 extension LaunchScreenTableViewController: WebManagerDelegate {
