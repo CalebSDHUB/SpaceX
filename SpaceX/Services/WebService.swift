@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Responsible for fetching from server
 final class Webservice: Service {
     static let shared = Webservice()
     private init(){}

@@ -35,7 +35,6 @@ final class LaunchScreenTableViewController: UITableViewController {
 }
 
 extension LaunchScreenTableViewController: WebManagerDelegate {
-    
     func update(viewModels: [ViewModel]) {
         Task {
             launchViewModels = viewModels

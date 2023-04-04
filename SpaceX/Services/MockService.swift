@@ -5,7 +5,7 @@
 //  Created by Caleb Danielsen on 02.04.2023.
 //
 
-/// Simulating the webservice
+/// Responsible for simulating the webservice
 final class MockWebservice: Service {
     static let shared: MockWebservice = MockWebservice()
     private init() {}

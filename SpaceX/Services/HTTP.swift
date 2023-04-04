@@ -7,6 +7,7 @@
 
 import Foundation
 
+/// Responsible for handling the HTTP
 final class HTTP {
     private init() {}
     
