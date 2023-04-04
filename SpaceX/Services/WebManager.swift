@@ -11,7 +11,6 @@ import Foundation
 final class WebManager: Manager {
     var delegate: WebManagerDelegate?
     static let shared = WebManager()
-    
     private init() {}
     
     /// Updating the view models

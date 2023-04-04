@@ -12,7 +12,7 @@ import Foundation
 final class ServiceFactory {
     private init() {}
     
-    /// The factory pattern is creating the instance
+    /// Creating instance depending on "Edit scheme -> Arguments" as mentioned
     static func create() -> Service {
         if let environment = ProcessInfo.processInfo.environment["-test"] {
                 /// Test

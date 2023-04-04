@@ -9,7 +9,6 @@
 final class ManagerFactory {
     private init() {}
     
-    /// The factory pattern is creating the instance
     static func create() -> Manager {
         WebManager.shared
     }
