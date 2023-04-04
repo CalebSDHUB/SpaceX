@@ -123,20 +123,13 @@
 		A55F8D4429D9A0BE0024C1F7 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				A55F8D4629D9AE7B0024C1F7 /* Service.swift */,
 				A55F8D6329D9F9070024C1F7 /* ServiceFactory.swift */,
 				A55F8D5529D9B9770024C1F7 /* WebService.swift */,
 				A55F8D5929D9E67A0024C1F7 /* MockService.swift */,
 				A55F8D4B29D9B0110024C1F7 /* HTTP.swift */,
 			);
 			path = Services;
-			sourceTree = "<group>";
-		};
-		A55F8D4529D9AE6C0024C1F7 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				A55F8D4629D9AE7B0024C1F7 /* Service.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 		A55F8D4D29D9B0D10024C1F7 /* ErrorHandling */ = {
@@ -221,7 +214,6 @@
 				A55F8D5F29D9F8090024C1F7 /* Resources */,
 				A55F8D5229D9B7EC0024C1F7 /* Utilities */,
 				A55F8D4D29D9B0D10024C1F7 /* ErrorHandling */,
-				A55F8D4529D9AE6C0024C1F7 /* Protocols */,
 				A55F8D4429D9A0BE0024C1F7 /* Services */,
 				A55F8D4129D991CF0024C1F7 /* Extensions */,
 				A5C06C7129D9875900A81002 /* ViewModels */,
