@@ -8,3 +8,9 @@
 protocol Service {
     func fetch(resourceName: String) async throws -> [LaunchViewModel]
 }
+
+protocol WebManagerDelegate {
+    func update(viewModel: [ViewModel])
+}
+
+protocol ViewModel {}
