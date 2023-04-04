@@ -10,15 +10,16 @@ import SwiftUI
 /// Reponsible for showing all past SpaceX launches
 final class LaunchScreenTableViewController: UITableViewController {
     private var viewModels: [ViewModel] = []
-    private var webManager: WebManager = WebManager()
+    private var manager = WebManager.shared
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constant.LaunchScreen.Title.name
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
-        webManager.delegate = self
-        webManager.update()
+        manager.delegate = self
+        manager.update()
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

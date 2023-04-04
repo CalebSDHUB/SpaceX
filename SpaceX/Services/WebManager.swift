@@ -10,6 +10,9 @@ import Foundation
 /// Responsibility to delegate the fetched view models
 final class WebManager {
     var delegate: WebManagerDelegate?
+    static let shared = WebManager()
+    
+    private init() {}
     
     /// Updating the view models
     func update() {
