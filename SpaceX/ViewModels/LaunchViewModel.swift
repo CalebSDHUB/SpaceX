@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct LaunchViewModel {
+struct LaunchViewModel: ViewModel {
     private let launchModel: LaunchModel
 
     init(launchModel: LaunchModel) {

@@ -6,11 +6,11 @@
 //
 
 protocol Service {
-    func fetch(resourceName: String) async throws -> [LaunchViewModel]
+    func fetch(resourceName: String) async throws -> [ViewModel]
 }
 
 protocol WebManagerDelegate {
-    func update(viewModel: [ViewModel])
+    func update(viewModels: [ViewModel])
 }
 
 protocol ViewModel {}
