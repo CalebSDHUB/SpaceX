@@ -13,5 +13,6 @@ protocol WebManagerDelegate {
     func update(viewModels: [ViewModel])
 }
 
+protocol Manager {}
 protocol ViewModel {}
 

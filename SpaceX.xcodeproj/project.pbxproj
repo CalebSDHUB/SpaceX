@@ -27,6 +27,7 @@
 		A57E25BF29DB7A2000B628FF /* DateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E25BE29DB7A2000B628FF /* DateView.swift */; };
 		A57E25C129DB7A5F00B628FF /* StatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E25C029DB7A5F00B628FF /* StatusView.swift */; };
 		A57E25C529DC153300B628FF /* WebManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E25C429DC153300B628FF /* WebManager.swift */; };
+		A57E25C729DC5BBE00B628FF /* ManagerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A57E25C629DC5BBE00B628FF /* ManagerFactory.swift */; };
 		A5C06C3C29D8ADF100A81002 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3B29D8ADF100A81002 /* AppDelegate.swift */; };
 		A5C06C3E29D8ADF100A81002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3D29D8ADF100A81002 /* SceneDelegate.swift */; };
 		A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3F29D8ADF100A81002 /* LaunchScreenController.swift */; };
@@ -75,6 +76,7 @@
 		A57E25BE29DB7A2000B628FF /* DateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateView.swift; sourceTree = "<group>"; };
 		A57E25C029DB7A5F00B628FF /* StatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusView.swift; sourceTree = "<group>"; };
 		A57E25C429DC153300B628FF /* WebManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebManager.swift; sourceTree = "<group>"; };
+		A57E25C629DC5BBE00B628FF /* ManagerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerFactory.swift; sourceTree = "<group>"; };
 		A5C06C3829D8ADF100A81002 /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C06C3B29D8ADF100A81002 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A5C06C3D29D8ADF100A81002 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				A55F8D4629D9AE7B0024C1F7 /* Protocols.swift */,
 				A57E25C429DC153300B628FF /* WebManager.swift */,
+				A57E25C629DC5BBE00B628FF /* ManagerFactory.swift */,
 				A55F8D6329D9F9070024C1F7 /* ServiceFactory.swift */,
 				A55F8D5529D9B9770024C1F7 /* WebService.swift */,
 				A55F8D5929D9E67A0024C1F7 /* MockService.swift */,
@@ -396,6 +399,7 @@
 			files = (
 				A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */,
 				A55F8D5429D9B8050024C1F7 /* Parser.swift in Sources */,
+				A57E25C729DC5BBE00B628FF /* ManagerFactory.swift in Sources */,
 				A57E25C129DB7A5F00B628FF /* StatusView.swift in Sources */,
 				A5C06C6D29D9780800A81002 /* LaunchModel.swift in Sources */,
 				A55F8D4729D9AE7B0024C1F7 /* Protocols.swift in Sources */,
