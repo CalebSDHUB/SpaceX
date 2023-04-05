@@ -12,11 +12,7 @@ final class Parser {
     private init() {}
     /// Parsing JSON data into Swift type
     static func decodeJSON<T: Decodable>(type: T.Type, data: Data?) throws -> T? {
-        do {
             guard let data else { return nil }
             return try JSONDecoder().decode(T.self, from: data)
-        } catch {
-            throw ParseError.parseJSONDecoderFailed
-        }
     }
 }
