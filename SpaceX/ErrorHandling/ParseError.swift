@@ -6,6 +6,6 @@
 //
 
 enum ParseError: Error {
-    case parseJSONDecoderFailed
+    case dataFailed
     case parseResourceNameToURLFailed
 }
