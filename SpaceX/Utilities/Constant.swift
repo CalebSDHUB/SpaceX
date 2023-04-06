@@ -38,12 +38,15 @@ struct Constant {
     struct View {
         struct Logo {
             static let smallFormat: CGFloat = 25
-            static let bigFormat: CGFloat = 150
+            static let bigFormat: CGFloat = 100
         }
         
         struct Status {
             static let failure = "Failure"
             static let success = "Success"
+            
+            static let smallFormat: CGFloat = 16
+            static let bigFormat: CGFloat = 18
         }
         
         struct Detail {

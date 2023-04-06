@@ -19,6 +19,11 @@ struct LogoView: View {
         }
     }
     
+    @State private var count = 0
+    @State private var loading = true
+    
+    let timer = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
     let launchViewModel: LaunchViewModel
     let logoFormat: LogoFormat
     
@@ -26,22 +31,28 @@ struct LogoView: View {
         AsyncImage(url: URL(string: launchViewModel.imageLogo)) { image in
             image
                 .resizable()
-                            .scaledToFit()
-                            .frame(width: logoFormat.format, height: logoFormat.format)
+                .scaledToFit()
+                .frame(width: logoFormat.format, height: logoFormat.format)
         } placeholder: {
-            Image(systemName: Constant.Default.systemImage)
-                .resizable()
-                            .scaledToFit()
-                            .frame(width: logoFormat.format, height: logoFormat.format)
+            if loading {
+                ProgressView()
+                    .foregroundColor(.secondary)
+                    .frame(width: logoFormat.format, height: logoFormat.format)
+                    .onReceive(timer) { _ in
+                        if count == 1 {
+                            loading = false
+                            count = 0
+                            timer.upstream.connect().cancel()
+                        }
+                        count += 1
+                    }
+            } else {
+                Image(systemName: Constant.Default.systemImage)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: logoFormat.format, height: logoFormat.format)
+            }
+            
         }
     }
 }
-
-//private extension Image {
-//    func imageModifier() -> some View {
-//        self
-//            .resizable()
-//            .scaledToFit()
-//            .frame(width: LogoSize., height: 25)
-//    }
-//}

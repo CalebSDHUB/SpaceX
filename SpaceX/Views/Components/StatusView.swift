@@ -13,8 +13,8 @@ struct StatusView: View {
         
         var format: CGFloat {
             switch self {
-            case .small: return 16
-            case .big: return 20
+            case .small: return Constant.View.Status.smallFormat
+            case .big: return Constant.View.Status.bigFormat
             }
         }
     }
