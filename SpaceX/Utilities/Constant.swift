@@ -54,6 +54,10 @@ struct Constant {
             static let iconPlay = "play.rectangle.fill"
             static let iconNewspaper = "newspaper.fill"
             static let iconWikipedia = "W"
+            
+            static let linkWebcast = "Webcast"
+            static let linkArticle = "Article"
+            static let linkWikipedia = "Wikipedia"
         }
     }
     
