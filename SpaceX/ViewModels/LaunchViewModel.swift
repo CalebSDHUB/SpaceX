@@ -23,5 +23,5 @@ struct LaunchViewModel: ViewModel {
     var LaunchDate: String { Date.utc(launchModel.dateUTC ?? Constant.Default.string) ?? Constant.Default.string }
     var launchSuccess: Bool { launchModel.success ?? false }
     var failureReasons: [String] { launchModel.failures.map({ $0?.reason ?? Constant.Default.string }) }
-    var failureDetails: String { launchModel.details ?? Constant.Default.string }
+    var failureDetail: String { launchModel.details ?? Constant.Default.string }
 }

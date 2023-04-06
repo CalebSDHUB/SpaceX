@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		A53FE04029DF43E800A7D5C2 /* WikiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE03F29DF43E800A7D5C2 /* WikiView.swift */; };
+		A53FE04429DF49AA00A7D5C2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04329DF49AA00A7D5C2 /* String+Extensions.swift */; };
 		A55F8D4329D991ED0024C1F7 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */; };
 		A55F8D4729D9AE7B0024C1F7 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4629D9AE7B0024C1F7 /* Protocols.swift */; };
 		A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4B29D9B0110024C1F7 /* HTTP.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		A53FE03F29DF43E800A7D5C2 /* WikiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiView.swift; sourceTree = "<group>"; };
+		A53FE04329DF49AA00A7D5C2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A55F8D4629D9AE7B0024C1F7 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A55F8D4B29D9B0110024C1F7 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			children = (
 				A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */,
 				A5BAFB8529DE2CC2008AF71C /* View+Extensions.swift */,
+				A53FE04329DF49AA00A7D5C2 /* String+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				A57E25C129DB7A5F00B628FF /* StatusView.swift in Sources */,
 				A5C06C6D29D9780800A81002 /* LaunchModel.swift in Sources */,
 				A55F8D4729D9AE7B0024C1F7 /* Protocols.swift in Sources */,
+				A53FE04429DF49AA00A7D5C2 /* String+Extensions.swift in Sources */,
 				A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */,
 				A57E25C929DCC78A00B628FF /* DetailView.swift in Sources */,
 				A5C06C3C29D8ADF100A81002 /* AppDelegate.swift in Sources */,

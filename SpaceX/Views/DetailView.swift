@@ -19,20 +19,22 @@ struct DetailView: View {
                 }
 
                 
-                LinkLabelView(title: Constant.View.Detail.linkWebcast, urlString: "https://www.youtube.com/watch?v=0a_00nJ_Y88", icon: Image(systemName: Constant.View.Detail.iconPlay).toAnyView(), color: .red)
-                LinkLabelView(title: Constant.View.Detail.linkArticle, urlString: "https://www.space.com/2196-spacex-inaugural-falcon-1-rocket-lost-launch.html", icon: Image(systemName: Constant.View.Detail.iconNewspaper).toAnyView(), color: .primary)
-                LinkLabelView(title: Constant.View.Detail.linkWikipedia, urlString: "https://en.wikipedia.org/wiki/DemoSat", icon:
+                LinkLabelView(title: Constant.View.Detail.linkWebcast, urlString: launchViewModel.videoURL, icon: Image(systemName: Constant.View.Detail.iconPlay).toAnyView(), color: .red)
+                LinkLabelView(title: Constant.View.Detail.linkArticle, urlString: launchViewModel.articleURL, icon: Image(systemName: Constant.View.Detail.iconNewspaper).toAnyView(), color: .primary)
+                LinkLabelView(title: Constant.View.Detail.linkWikipedia, urlString: launchViewModel.wikipediaURL, icon:
                 WikiView(title: Constant.View.Detail.iconWikipedia)
                     .toAnyView(), color: .primary)
             }
             
-            if true {
+            if !launchViewModel.launchSuccess {
                 Section(Constant.View.Detail.sectionFailureReason) {
-                    Text("sdfijdfjdklfsdj")
+                    ForEach(launchViewModel.failureReasons, id: \.self) { failureReason in
+                        Text(failureReason.capitalizingFirstLetter())
+                    }
+                    
                 }
-                
                 Section(Constant.View.Detail.sectionFailureDetails) {
-                    Text("sdfijdfjdklfsdj")
+                    Text(launchViewModel.failureDetail.capitalizingFirstLetter())
                 }
             }
             

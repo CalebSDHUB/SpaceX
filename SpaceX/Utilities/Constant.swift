@@ -48,7 +48,7 @@ struct Constant {
         
         struct Detail {
             static let sectionMission = "Mission"
-            static let sectionFailureReason = "Failure reason"
+            static let sectionFailureReason = "Failure reasons"
             static let sectionFailureDetails = "Failure details"
             
             static let iconPlay = "play.rectangle.fill"
