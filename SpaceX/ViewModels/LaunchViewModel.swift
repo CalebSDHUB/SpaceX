@@ -24,12 +24,4 @@ struct LaunchViewModel: ViewModel {
     var failureReasons: [String] { launchModel.failures.map({ $0?.reason ?? Constant.Default.string }) }
     var failureDetail: String { launchModel.details ?? Constant.Default.string }
     var launchDate: String? { launchModel.dateUTC }
-    var launchDateShort: String {
-        Date.utc(launchModel.dateUTC ?? Constant.Default.string,
-                 dateStyle: .abbreviated,
-                 timeStyle: .omitted) ?? Constant.Default.string }
-    var launchDateLong: String {
-        Date.utc(launchModel.dateUTC ?? Constant.Default.string,
-                 dateStyle: .abbreviated,
-                 timeStyle: .complete) ?? Constant.Default.string }
 }
