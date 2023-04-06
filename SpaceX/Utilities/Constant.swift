@@ -33,6 +33,13 @@ struct Constant {
         }
     }
     
+    struct View {
+        struct Status {
+            static let failure = "Failure"
+            static let success = "Success"
+        }
+    }
+    
     struct Default {
         static let string = "n/a"
         static let systemImage = "photo"

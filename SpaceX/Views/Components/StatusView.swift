@@ -20,8 +20,8 @@ struct StatusView: View {
         
         var title: String {
             switch self {
-            case .failure: return "Failure"
-            case .success: return "Success"
+            case .failure: return Constant.View.Status.failure
+            case .success: return Constant.View.Status.success
             }
         }
         
