@@ -35,7 +35,8 @@ final class LaunchScreenTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(UIHostingController(rootView: DetailView()), animated: true)
+        let launchViewModel = viewModels[indexPath.row] as! LaunchViewModel
+        navigationController?.pushViewController(UIHostingController(rootView: DetailView(launchViewModel: launchViewModel)), animated: true)
     }
 }
 

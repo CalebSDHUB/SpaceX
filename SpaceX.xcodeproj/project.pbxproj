@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A53FE04029DF43E800A7D5C2 /* WikiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE03F29DF43E800A7D5C2 /* WikiView.swift */; };
 		A55F8D4329D991ED0024C1F7 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */; };
 		A55F8D4729D9AE7B0024C1F7 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4629D9AE7B0024C1F7 /* Protocols.swift */; };
 		A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4B29D9B0110024C1F7 /* HTTP.swift */; };
@@ -58,6 +59,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A53FE03F29DF43E800A7D5C2 /* WikiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiView.swift; sourceTree = "<group>"; };
 		A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A55F8D4629D9AE7B0024C1F7 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A55F8D4B29D9B0110024C1F7 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
@@ -204,6 +206,7 @@
 				A57E25BE29DB7A2000B628FF /* DateView.swift */,
 				A57E25C029DB7A5F00B628FF /* StatusView.swift */,
 				A5BAFB8329DE29F4008AF71C /* LinkLabelView.swift */,
+				A53FE03F29DF43E800A7D5C2 /* WikiView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -413,6 +416,7 @@
 			files = (
 				A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */,
 				A55F8D5429D9B8050024C1F7 /* Parser.swift in Sources */,
+				A53FE04029DF43E800A7D5C2 /* WikiView.swift in Sources */,
 				A5BAFB8429DE29F4008AF71C /* LinkLabelView.swift in Sources */,
 				A57E25C729DC5BBE00B628FF /* ManagerFactory.swift in Sources */,
 				A57E25C129DB7A5F00B628FF /* StatusView.swift in Sources */,

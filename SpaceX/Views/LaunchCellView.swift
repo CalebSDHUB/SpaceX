@@ -12,7 +12,7 @@ struct LaunchCellView: View {
     
     var body: some View {
         HStack(alignment: .top) {
-            LogoView(launchViewModel: launchViewModel)
+            LogoView(launchViewModel: launchViewModel, logoFormat: .big)
             VStack(alignment: .center, spacing: 10) {
                 TitleView(launchViewModel: launchViewModel)
                 DateView(launchViewModel: launchViewModel)

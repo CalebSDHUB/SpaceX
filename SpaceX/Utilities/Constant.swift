@@ -5,12 +5,14 @@
 //  Created by Caleb Danielsen on 02.04.2023.
 //
 
+import Foundation
+
 struct Constant {
     struct URL {
         struct statusCode {
             static let ok = 200
         }
-        static let spaceX = "https://api.spacexdata.com/v5/launches"
+        static let spaceXapi = "https://api.spacexdata.com/v5/launches"
     }
     
     struct File {
@@ -34,9 +36,24 @@ struct Constant {
     }
     
     struct View {
+        struct Logo {
+            static let smallFormat: CGFloat = 25
+            static let bigFormat: CGFloat = 150
+        }
+        
         struct Status {
             static let failure = "Failure"
             static let success = "Success"
+        }
+        
+        struct Detail {
+            static let sectionMission = "Mission"
+            static let sectionFailureReason = "Failure reason"
+            static let sectionFailureDetails = "Failure details"
+            
+            static let iconPlay = "play.rectangle.fill"
+            static let iconNewspaper = "newspaper.fill"
+            static let iconWikipedia = "W"
         }
     }
     
@@ -46,8 +63,8 @@ struct Constant {
     }
     
     struct Error {
-            static let badResponseMessage = "Bad response from the server"
-            static let dataFailedMessage = "Data failed to unwrap"
-            static let parseResourceNameToURLFailedMessage = "Resource name failed to parse into URL"
+        static let badResponseMessage = "Bad response from the server"
+        static let dataFailedMessage = "Data failed to unwrap"
+        static let parseResourceNameToURLFailedMessage = "Resource name failed to parse into URL"
     }
 }
