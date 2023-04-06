@@ -5,6 +5,14 @@
 //  Created by Caleb Danielsen on 02.04.2023.
 //
 
-enum WebserviceError: Error {
+import Foundation
+
+enum WebserviceError: LocalizedError {
     case badResponse
+    
+    var errorDescription: String? {
+        switch self {
+        case .badResponse: return Constant.Error.badResponseMessage
+        }
+    }
 }

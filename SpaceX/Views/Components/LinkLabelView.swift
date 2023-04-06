@@ -10,14 +10,19 @@ import SwiftUI
 struct LinkLabelView: View {
     let title: String
     let urlString: String
-    let image: AnyView
+    let icon: AnyView
+    let color: Color
 
     
     var body: some View {
-        HStack {
-            image
-                .foregroundColor(.red)
-            Link(title, destination: URL(string: urlString)!)
+        if let url = URL(string: urlString) {
+            HStack {
+                icon
+                    .foregroundColor(color)
+                Link(title, destination: url)
+            }
+        } else {
+            Image(systemName: Constant.Default.systemImage)
         }
     }
 }

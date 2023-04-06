@@ -37,4 +37,10 @@ struct Constant {
         static let string = "n/a"
         static let systemImage = "photo"
     }
+    
+    struct Error {
+            static let badResponseMessage = "Bad response from the server"
+            static let dataFailedMessage = "Data failed to unwrap"
+            static let parseResourceNameToURLFailedMessage = "Resource name failed to parse into URL"
+    }
 }
