@@ -17,7 +17,12 @@ struct DetailView: View {
                     TitleView(launchViewModel: launchViewModel)
                     LogoView(launchViewModel: launchViewModel, logoFormat: .small)
                 }
-
+                
+                HStack {
+                    DateView(launchViewModel: launchViewModel, dateStyle: .abbreviated, timeStyle: .shortened)
+                    Spacer()
+                    StatusView(launchViewModel: launchViewModel, statusFormat: .small, maxWidth: nil)
+                }
                 
                 LinkLabelView(title: Constant.View.Detail.linkWebcast, urlString: launchViewModel.videoURL, icon: Image(systemName: Constant.View.Detail.iconPlay).toAnyView(), color: .red)
                 LinkLabelView(title: Constant.View.Detail.linkArticle, urlString: launchViewModel.articleURL, icon: Image(systemName: Constant.View.Detail.iconNewspaper).toAnyView(), color: .primary)
@@ -29,12 +34,12 @@ struct DetailView: View {
             if !launchViewModel.launchSuccess {
                 Section(Constant.View.Detail.sectionFailureReason) {
                     ForEach(launchViewModel.failureReasons, id: \.self) { failureReason in
-                        Text(failureReason.capitalizingFirstLetter())
+                        ContentView(title: failureReason.capitalizingFirstLetter())
                     }
                     
                 }
                 Section(Constant.View.Detail.sectionFailureDetails) {
-                    Text(launchViewModel.failureDetail.capitalizingFirstLetter())
+                    ContentView(title: launchViewModel.failureDetail.capitalizingFirstLetter())
                 }
             }
             

@@ -15,8 +15,8 @@ struct LaunchCellView: View {
             LogoView(launchViewModel: launchViewModel, logoFormat: .big)
             VStack(alignment: .center, spacing: 10) {
                 TitleView(launchViewModel: launchViewModel)
-                DateView(launchViewModel: launchViewModel)
-                StatusView(launchViewModel: launchViewModel)
+                DateView(launchViewModel: launchViewModel, dateStyle: .abbreviated, timeStyle: .omitted)
+                StatusView(launchViewModel: launchViewModel, statusFormat: .big, maxWidth: .infinity)
                     .padding(.top, 6)
             }
             Spacer()
