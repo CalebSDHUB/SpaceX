@@ -10,7 +10,6 @@ import SwiftUI
 /// Reponsible for showing all past SpaceX launches
 final class LaunchScreenTableViewController: UITableViewController {
     private var viewModels: [ViewModel] = []
-    private var viewModelsBuffer: [ViewModel] = []
     private var webManager = ManagerFactory.create() as! WebManager
     
     lazy var launchFilterBarButtonItem: UIBarButtonItem = {
@@ -37,7 +36,7 @@ final class LaunchScreenTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
         cell.accessoryType = .disclosureIndicator
-        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: viewModelsBuffer[indexPath.row] as! LaunchViewModel) }
+        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: viewModels[indexPath.row] as! LaunchViewModel) }
         return cell
     }
     
@@ -52,7 +51,6 @@ extension LaunchScreenTableViewController: WebManagerDelegate {
     func update(viewModels: [ViewModel]) {
         Task {
             self.viewModels = viewModels
-            self.viewModelsBuffer = viewModels
             tableView.reloadData()
         }
     }
@@ -65,18 +63,18 @@ extension LaunchScreenTableViewController {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default) { [weak self] _ in
-            Sort.setStrategy(strategy: NewestDateStrategy())
-            self?.viewModelsBuffer = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
+            Sort.setStrategy(strategy: DateStrategy())
+            self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.oldest, style: .default) { [weak self] _ in
             Sort.setStrategy(strategy: OldestDateStrategy())
-            self?.viewModelsBuffer = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
+            self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
             Sort.setStrategy(strategy: AlphabetStrategy())
-            self?.viewModelsBuffer = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
+            self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
         
