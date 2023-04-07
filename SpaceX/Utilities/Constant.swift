@@ -33,6 +33,15 @@ struct Constant {
         struct Cell {
             static let identifier = "launch_screen_cell"
         }
+        
+        struct NavigationItemButton {
+            static let title = "Filter by category"
+            static let newest = "Newest"
+            static let oldest = "Oldeest"
+            static let success = "Success"
+            static let failure = "Failure"
+            static let name = "Name"
+        }
     }
     
     struct View {

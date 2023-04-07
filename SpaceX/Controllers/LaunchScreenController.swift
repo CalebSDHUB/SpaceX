@@ -12,10 +12,17 @@ final class LaunchScreenTableViewController: UITableViewController {
     private var viewModels: [ViewModel] = []
     private var webManager = ManagerFactory.create() as! WebManager
     
+    lazy var launchFilterBarButtonItem: UIBarButtonItem = {
+        let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(launchFilterButtonPressed))
+        barbuttomItem.tintColor = .orange
+        return barbuttomItem
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constant.LaunchScreen.Title.name
         navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = launchFilterBarButtonItem
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
         webManager.delegate = self
         webManager.update()
@@ -40,12 +47,30 @@ final class LaunchScreenTableViewController: UITableViewController {
     }
 }
 
+// MARK: - WebManagerDelegate
+
 extension LaunchScreenTableViewController: WebManagerDelegate {
     func update(viewModels: [ViewModel]) {
         Task {
             self.viewModels = viewModels
             tableView.reloadData()
         }
+    }
+}
+
+// MARK: - Private functions
+
+extension LaunchScreenTableViewController {
+    @objc private func launchFilterButtonPressed() {
+        let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default))
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.oldest, style: .default))
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.success, style: .default))
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.failure, style: .default))
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default))
+        alertController.view.tintColor = .orange
+        
+        present(alertController, animated: true)
     }
 }
 
