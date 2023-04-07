@@ -36,9 +36,8 @@ struct Constant {
         
         struct NavigationItemButton {
             static let title = "Sort by"
-            static let newest = "Newest"
-            static let oldest = "Oldest"
-            static let name = "Alphabet"
+            static let date = "Date"
+            static let name = "Name"
         }
     }
     
