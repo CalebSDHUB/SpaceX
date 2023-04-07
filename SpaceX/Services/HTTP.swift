@@ -13,7 +13,7 @@ final class HTTP {
     
     /// Sending the HTTP request to the server and receives HTTP response with valid data, if the status code is valid.
     static func requestResponse(_ urlAddress: String, statusCode: Int) async throws -> Data? {
-            guard let url = URL(string: urlAddress) else { return nil }
+        guard let url = URL(string: urlAddress) else { throw ParseError.parseStringToURLFailed }
             let (data, response) = try await URLSession.shared.data(from: url)
             try checkStatusCode(response: response, statusCode: statusCode)
             return data

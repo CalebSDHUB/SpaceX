@@ -9,12 +9,12 @@ import Foundation
 
 enum ParseError: LocalizedError {
     case dataFailed
-    case parseResourceNameToURLFailed
+    case parseStringToURLFailed
     
     var errorDescription: String? {
         switch self {
         case .dataFailed: return Constant.Error.dataFailedMessage
-        case .parseResourceNameToURLFailed: return Constant.Error.parseResourceNameToURLFailedMessage
+        case .parseStringToURLFailed: return Constant.Error.parseStringToURLFailedMessage
         }
     }
 }
