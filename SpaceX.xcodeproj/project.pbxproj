@@ -19,7 +19,6 @@
 		A53FE05A29E0A39D00A7D5C2 /* WebManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05929E0A39D00A7D5C2 /* WebManagerDelegate.swift */; };
 		A53FE05C29E0A3BF00A7D5C2 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05B29E0A3BF00A7D5C2 /* Manager.swift */; };
 		A53FE05E29E0A3D200A7D5C2 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05D29E0A3D200A7D5C2 /* ViewModel.swift */; };
-		A53FE06029E0B36F00A7D5C2 /* ReverseAlphabet.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05F29E0B36F00A7D5C2 /* ReverseAlphabet.swift */; };
 		A55F8D4329D991ED0024C1F7 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */; };
 		A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4B29D9B0110024C1F7 /* HTTP.swift */; };
 		A55F8D4F29D9B0E50024C1F7 /* WebserviceError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4E29D9B0E50024C1F7 /* WebserviceError.swift */; };
@@ -82,7 +81,6 @@
 		A53FE05929E0A39D00A7D5C2 /* WebManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebManagerDelegate.swift; sourceTree = "<group>"; };
 		A53FE05B29E0A3BF00A7D5C2 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		A53FE05D29E0A3D200A7D5C2 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
-		A53FE05F29E0B36F00A7D5C2 /* ReverseAlphabet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReverseAlphabet.swift; sourceTree = "<group>"; };
 		A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A55F8D4B29D9B0110024C1F7 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
 		A55F8D4E29D9B0E50024C1F7 /* WebserviceError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebserviceError.swift; sourceTree = "<group>"; };
@@ -150,7 +148,6 @@
 				A53FE04A29E097AA00A7D5C2 /* DateStrategy.swift */,
 				A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */,
 				A53FE05429E09EA700A7D5C2 /* NameStrategy.swift */,
-				A53FE05F29E0B36F00A7D5C2 /* ReverseAlphabet.swift */,
 				A53FE04C29E0988B00A7D5C2 /* Sort.swift */,
 			);
 			path = Strategies;
@@ -478,7 +475,6 @@
 				A57E25C929DCC78A00B628FF /* DetailView.swift in Sources */,
 				A5C06C3C29D8ADF100A81002 /* AppDelegate.swift in Sources */,
 				A55F8D5629D9B9770024C1F7 /* WebService.swift in Sources */,
-				A53FE06029E0B36F00A7D5C2 /* ReverseAlphabet.swift in Sources */,
 				A5C06C7329D9876800A81002 /* LaunchViewModel.swift in Sources */,
 				A53FE04F29E09D5200A7D5C2 /* OldestDateStrategy.swift in Sources */,
 				A57E25BF29DB7A2000B628FF /* DateView.swift in Sources */,
