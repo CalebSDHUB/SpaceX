@@ -73,7 +73,7 @@ extension LaunchScreenTableViewController {
             self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
-            Sort.setStrategy(strategy: AlphabetStrategy())
+            Sort.setStrategy(strategy: NameStrategy())
             self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
