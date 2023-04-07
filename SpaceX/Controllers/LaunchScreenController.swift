@@ -74,11 +74,6 @@ extension LaunchScreenTableViewController {
             self?.viewModelsBuffer = Context.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.success, style: .default) { [weak self] _ in
-            Context.setStrategy(strategy: SuccessStrategy())
-            self?.viewModelsBuffer = Context.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
-            self?.tableView.reloadData()
-        })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.failure, style: .default) { [weak self] _ in
             Context.setStrategy(strategy: FailureStrategy())
             self?.viewModelsBuffer = Context.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])

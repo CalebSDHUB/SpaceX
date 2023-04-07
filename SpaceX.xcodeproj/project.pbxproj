@@ -14,7 +14,6 @@
 		A53FE04B29E097AA00A7D5C2 /* NewestDateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */; };
 		A53FE04D29E0988B00A7D5C2 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04C29E0988B00A7D5C2 /* Context.swift */; };
 		A53FE04F29E09D5200A7D5C2 /* OldestDateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */; };
-		A53FE05129E09DDA00A7D5C2 /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05029E09DDA00A7D5C2 /* SuccessStrategy.swift */; };
 		A53FE05329E09E6100A7D5C2 /* FailureStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */; };
 		A53FE05529E09EA700A7D5C2 /* TitleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */; };
 		A53FE05829E0A38800A7D5C2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05729E0A38800A7D5C2 /* Service.swift */; };
@@ -78,7 +77,6 @@
 		A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestDateStrategy.swift; sourceTree = "<group>"; };
 		A53FE04C29E0988B00A7D5C2 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldestDateStrategy.swift; sourceTree = "<group>"; };
-		A53FE05029E09DDA00A7D5C2 /* SuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
 		A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureStrategy.swift; sourceTree = "<group>"; };
 		A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStrategy.swift; sourceTree = "<group>"; };
 		A53FE05729E0A38800A7D5C2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
@@ -151,7 +149,6 @@
 			children = (
 				A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */,
 				A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */,
-				A53FE05029E09DDA00A7D5C2 /* SuccessStrategy.swift */,
 				A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */,
 				A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */,
 				A53FE04C29E0988B00A7D5C2 /* Context.swift */,
@@ -478,7 +475,6 @@
 				A57E25C129DB7A5F00B628FF /* StatusView.swift in Sources */,
 				A5C06C6D29D9780800A81002 /* LaunchModel.swift in Sources */,
 				A53FE04429DF49AA00A7D5C2 /* String+Extensions.swift in Sources */,
-				A53FE05129E09DDA00A7D5C2 /* SuccessStrategy.swift in Sources */,
 				A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */,
 				A57E25C929DCC78A00B628FF /* DetailView.swift in Sources */,
 				A5C06C3C29D8ADF100A81002 /* AppDelegate.swift in Sources */,
