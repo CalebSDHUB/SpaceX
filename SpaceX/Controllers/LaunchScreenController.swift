@@ -67,11 +67,6 @@ extension LaunchScreenTableViewController {
             self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.oldest, style: .default) { [weak self] _ in
-            Sort.setStrategy(strategy: OldestDateStrategy())
-            self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
-            self?.tableView.reloadData()
-        })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
             Sort.setStrategy(strategy: NameStrategy())
             self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
