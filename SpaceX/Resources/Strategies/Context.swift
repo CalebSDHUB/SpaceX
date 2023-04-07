@@ -5,7 +5,7 @@
 //  Created by Caleb Danielsen on 07.04.2023.
 //
 
-/// Responsible for setting and executing the strategy using the Strategy Design Pattern
+/// Responsible for setting and executing the current strategy using the Strategy Design Pattern
 final class Context {
     static private var strategy: Strategy!
     private init() {}

@@ -62,7 +62,7 @@ extension LaunchScreenTableViewController {
     @objc private func launchFilterButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default) { [weak self]_ in
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default) { [weak self] _ in
             Context.setStrategy(strategy: NewestDateStrategy())
             self?.viewModels = Context.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
