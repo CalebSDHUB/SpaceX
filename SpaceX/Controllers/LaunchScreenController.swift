@@ -63,13 +63,24 @@ extension LaunchScreenTableViewController: WebManagerDelegate {
 extension LaunchScreenTableViewController {
     @objc private func launchFilterButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default))
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.oldest, style: .default))
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.success, style: .default))
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.failure, style: .default))
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default))
-        alertController.view.tintColor = .orange
         
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default) { [weak self] _ in
+            print((self?.viewModels as! [LaunchViewModel]).map({ $0.launchDate }))
+        })
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.oldest, style: .default) { [weak self] _ in
+            
+        })
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.success, style: .default) { [weak self] _ in
+            
+        })
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.failure, style: .default) { [weak self] _ in
+            
+        })
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
+            
+        })
+        
+        alertController.view.tintColor = .orange
         present(alertController, animated: true)
     }
 }

@@ -37,7 +37,7 @@ struct Constant {
         struct NavigationItemButton {
             static let title = "Filter by category"
             static let newest = "Newest"
-            static let oldest = "Oldeest"
+            static let oldest = "Oldest"
             static let success = "Success"
             static let failure = "Failure"
             static let name = "Name"
@@ -81,6 +81,6 @@ struct Constant {
     struct Error {
         static let badResponseMessage = "Bad response from the server"
         static let dataFailedMessage = "Data failed to unwrap"
-        static let parseResourceNameToURLFailedMessage = "Resource name failed to parse into URL"
+        static let parseResourceNameToURLFailedMessage = "Resource name failed parsing into URL"
     }
 }

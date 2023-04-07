@@ -13,7 +13,7 @@ struct DateView: View {
     let timeStyle: Date.FormatStyle.TimeStyle
     
     var body: some View {
-        Text(Date.utc(launchViewModel.launchDate ?? Constant.Default.string, dateStyle: dateStyle, timeStyle: timeStyle) ?? Constant.Default.string )
+        Text(launchViewModel.launchDate.formatted(date: dateStyle, time: timeStyle))
             .bold()
             .foregroundColor(.secondary)
             .multilineTextAlignment(.center)
