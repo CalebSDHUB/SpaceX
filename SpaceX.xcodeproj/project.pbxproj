@@ -216,8 +216,6 @@
 		A55F8D5F29D9F8090024C1F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				A53FE05629E0A36800A7D5C2 /* Protocols */,
-				A53FE04729E0962E00A7D5C2 /* Strategies */,
 				A55F8D6029D9F8130024C1F7 /* JSON */,
 			);
 			path = Resources;
@@ -287,6 +285,8 @@
 			isa = PBXGroup;
 			children = (
 				A55F8D5F29D9F8090024C1F7 /* Resources */,
+				A53FE05629E0A36800A7D5C2 /* Protocols */,
+				A53FE04729E0962E00A7D5C2 /* Strategies */,
 				A55F8D5229D9B7EC0024C1F7 /* Utilities */,
 				A55F8D4D29D9B0D10024C1F7 /* ErrorHandling */,
 				A55F8D4429D9A0BE0024C1F7 /* Services */,
