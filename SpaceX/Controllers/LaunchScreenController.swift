@@ -34,16 +34,14 @@ final class LaunchScreenTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let launchViewModel = viewModels[indexPath.row] as! LaunchViewModel
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
         cell.accessoryType = .disclosureIndicator
-        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: launchViewModel) }
+        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: viewModels[indexPath.row] as! LaunchViewModel) }
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let launchViewModel = viewModels[indexPath.row] as! LaunchViewModel
-        navigationController?.pushViewController(UIHostingController(rootView: DetailView(launchViewModel: launchViewModel)), animated: true)
+        navigationController?.pushViewController(UIHostingController(rootView: DetailView(launchViewModel: viewModels[indexPath.row] as! LaunchViewModel)), animated: true)
     }
 }
 
@@ -63,9 +61,12 @@ extension LaunchScreenTableViewController: WebManagerDelegate {
 extension LaunchScreenTableViewController {
     @objc private func launchFilterButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
-        
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default) { [weak self] _ in
-            print((self?.viewModels as! [LaunchViewModel]).map({ $0.launchDate }))
+            let launchViewModels = self?.viewModels as! [LaunchViewModel]
+            let sortedDates = launchViewModels.map { $0.launchDate }.enumerated().sorted(by: { $0.element > $1.element })
+            let sortedViewModels = sortedDates.map { launchViewModels[$0.offset] }
+            self?.viewModels = sortedViewModels
+            self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.oldest, style: .default) { [weak self] _ in
             
