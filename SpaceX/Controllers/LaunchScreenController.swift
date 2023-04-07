@@ -65,18 +65,18 @@ extension LaunchScreenTableViewController {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default) { [weak self] _ in
-            Context.setStrategy(strategy: NewestDateStrategy())
-            self?.viewModelsBuffer = Context.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
+            Sort.setStrategy(strategy: NewestDateStrategy())
+            self?.viewModelsBuffer = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.oldest, style: .default) { [weak self] _ in
-            Context.setStrategy(strategy: OldestDateStrategy())
-            self?.viewModelsBuffer = Context.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
+            Sort.setStrategy(strategy: OldestDateStrategy())
+            self?.viewModelsBuffer = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
-            Context.setStrategy(strategy: TitleStrategy())
-            self?.viewModelsBuffer = Context.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
+            Sort.setStrategy(strategy: TitleStrategy())
+            self?.viewModelsBuffer = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
         

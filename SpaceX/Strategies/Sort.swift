@@ -6,7 +6,7 @@
 //
 
 /// Responsible for setting and executing the current strategy using the Strategy Design Pattern
-final class Context {
+final class Sort {
     static private var strategy: Strategy!
     private init() {}
     
