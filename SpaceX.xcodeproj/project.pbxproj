@@ -10,6 +10,13 @@
 		A53FE04029DF43E800A7D5C2 /* WikiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE03F29DF43E800A7D5C2 /* WikiView.swift */; };
 		A53FE04429DF49AA00A7D5C2 /* String+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04329DF49AA00A7D5C2 /* String+Extensions.swift */; };
 		A53FE04629DF4A9300A7D5C2 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04529DF4A9300A7D5C2 /* ContentView.swift */; };
+		A53FE04929E096C600A7D5C2 /* Strategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04829E096C600A7D5C2 /* Strategy.swift */; };
+		A53FE04B29E097AA00A7D5C2 /* NewestDateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */; };
+		A53FE04D29E0988B00A7D5C2 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04C29E0988B00A7D5C2 /* Context.swift */; };
+		A53FE04F29E09D5200A7D5C2 /* OldestDateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */; };
+		A53FE05129E09DDA00A7D5C2 /* SuccessStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05029E09DDA00A7D5C2 /* SuccessStrategy.swift */; };
+		A53FE05329E09E6100A7D5C2 /* FailureStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */; };
+		A53FE05529E09EA700A7D5C2 /* TitleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */; };
 		A55F8D4329D991ED0024C1F7 /* Date+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */; };
 		A55F8D4729D9AE7B0024C1F7 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4629D9AE7B0024C1F7 /* Protocols.swift */; };
 		A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A55F8D4B29D9B0110024C1F7 /* HTTP.swift */; };
@@ -64,6 +71,13 @@
 		A53FE03F29DF43E800A7D5C2 /* WikiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WikiView.swift; sourceTree = "<group>"; };
 		A53FE04329DF49AA00A7D5C2 /* String+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extensions.swift"; sourceTree = "<group>"; };
 		A53FE04529DF4A9300A7D5C2 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		A53FE04829E096C600A7D5C2 /* Strategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strategy.swift; sourceTree = "<group>"; };
+		A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestDateStrategy.swift; sourceTree = "<group>"; };
+		A53FE04C29E0988B00A7D5C2 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
+		A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldestDateStrategy.swift; sourceTree = "<group>"; };
+		A53FE05029E09DDA00A7D5C2 /* SuccessStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessStrategy.swift; sourceTree = "<group>"; };
+		A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureStrategy.swift; sourceTree = "<group>"; };
+		A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStrategy.swift; sourceTree = "<group>"; };
 		A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+Extensions.swift"; sourceTree = "<group>"; };
 		A55F8D4629D9AE7B0024C1F7 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
 		A55F8D4B29D9B0110024C1F7 /* HTTP.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTP.swift; sourceTree = "<group>"; };
@@ -126,6 +140,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A53FE04729E0962E00A7D5C2 /* Strategy */ = {
+			isa = PBXGroup;
+			children = (
+				A53FE04829E096C600A7D5C2 /* Strategy.swift */,
+				A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */,
+				A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */,
+				A53FE05029E09DDA00A7D5C2 /* SuccessStrategy.swift */,
+				A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */,
+				A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */,
+				A53FE04C29E0988B00A7D5C2 /* Context.swift */,
+			);
+			path = Strategy;
+			sourceTree = "<group>";
+		};
 		A55F8D4129D991CF0024C1F7 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -172,6 +200,7 @@
 		A55F8D5F29D9F8090024C1F7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A53FE04729E0962E00A7D5C2 /* Strategy */,
 				A55F8D6029D9F8130024C1F7 /* JSON */,
 			);
 			path = Resources;
@@ -421,7 +450,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */,
+				A53FE05329E09E6100A7D5C2 /* FailureStrategy.swift in Sources */,
 				A55F8D5429D9B8050024C1F7 /* Parser.swift in Sources */,
+				A53FE04D29E0988B00A7D5C2 /* Context.swift in Sources */,
 				A53FE04029DF43E800A7D5C2 /* WikiView.swift in Sources */,
 				A5BAFB8429DE29F4008AF71C /* LinkLabelView.swift in Sources */,
 				A57E25C729DC5BBE00B628FF /* ManagerFactory.swift in Sources */,
@@ -429,17 +460,22 @@
 				A5C06C6D29D9780800A81002 /* LaunchModel.swift in Sources */,
 				A55F8D4729D9AE7B0024C1F7 /* Protocols.swift in Sources */,
 				A53FE04429DF49AA00A7D5C2 /* String+Extensions.swift in Sources */,
+				A53FE05129E09DDA00A7D5C2 /* SuccessStrategy.swift in Sources */,
 				A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */,
 				A57E25C929DCC78A00B628FF /* DetailView.swift in Sources */,
 				A5C06C3C29D8ADF100A81002 /* AppDelegate.swift in Sources */,
 				A55F8D5629D9B9770024C1F7 /* WebService.swift in Sources */,
 				A5C06C7329D9876800A81002 /* LaunchViewModel.swift in Sources */,
+				A53FE04F29E09D5200A7D5C2 /* OldestDateStrategy.swift in Sources */,
 				A57E25BF29DB7A2000B628FF /* DateView.swift in Sources */,
+				A53FE04B29E097AA00A7D5C2 /* NewestDateStrategy.swift in Sources */,
 				A55F8D4F29D9B0E50024C1F7 /* WebserviceError.swift in Sources */,
 				A57E25C529DC153300B628FF /* WebManager.swift in Sources */,
 				A55F8D5A29D9E67A0024C1F7 /* MockService.swift in Sources */,
+				A53FE05529E09EA700A7D5C2 /* TitleStrategy.swift in Sources */,
 				A55F8D5C29D9E7790024C1F7 /* File.swift in Sources */,
 				A55F8D5829D9DD890024C1F7 /* Constant.swift in Sources */,
+				A53FE04929E096C600A7D5C2 /* Strategy.swift in Sources */,
 				A57E25BB29DB60D600B628FF /* LogoView.swift in Sources */,
 				A55F8D5129D9B3400024C1F7 /* ParseError.swift in Sources */,
 				A55F8D6429D9F9070024C1F7 /* ServiceFactory.swift in Sources */,
