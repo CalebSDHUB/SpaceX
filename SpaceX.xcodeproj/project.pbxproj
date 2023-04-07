@@ -14,7 +14,6 @@
 		A53FE04B29E097AA00A7D5C2 /* NewestDateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */; };
 		A53FE04D29E0988B00A7D5C2 /* Context.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04C29E0988B00A7D5C2 /* Context.swift */; };
 		A53FE04F29E09D5200A7D5C2 /* OldestDateStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */; };
-		A53FE05329E09E6100A7D5C2 /* FailureStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */; };
 		A53FE05529E09EA700A7D5C2 /* TitleStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */; };
 		A53FE05829E0A38800A7D5C2 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05729E0A38800A7D5C2 /* Service.swift */; };
 		A53FE05A29E0A39D00A7D5C2 /* WebManagerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A53FE05929E0A39D00A7D5C2 /* WebManagerDelegate.swift */; };
@@ -77,7 +76,6 @@
 		A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewestDateStrategy.swift; sourceTree = "<group>"; };
 		A53FE04C29E0988B00A7D5C2 /* Context.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Context.swift; sourceTree = "<group>"; };
 		A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldestDateStrategy.swift; sourceTree = "<group>"; };
-		A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FailureStrategy.swift; sourceTree = "<group>"; };
 		A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleStrategy.swift; sourceTree = "<group>"; };
 		A53FE05729E0A38800A7D5C2 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		A53FE05929E0A39D00A7D5C2 /* WebManagerDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebManagerDelegate.swift; sourceTree = "<group>"; };
@@ -149,7 +147,6 @@
 			children = (
 				A53FE04A29E097AA00A7D5C2 /* NewestDateStrategy.swift */,
 				A53FE04E29E09D5200A7D5C2 /* OldestDateStrategy.swift */,
-				A53FE05229E09E6100A7D5C2 /* FailureStrategy.swift */,
 				A53FE05429E09EA700A7D5C2 /* TitleStrategy.swift */,
 				A53FE04C29E0988B00A7D5C2 /* Context.swift */,
 			);
@@ -464,7 +461,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				A55F8D4C29D9B0110024C1F7 /* HTTP.swift in Sources */,
-				A53FE05329E09E6100A7D5C2 /* FailureStrategy.swift in Sources */,
 				A53FE05A29E0A39D00A7D5C2 /* WebManagerDelegate.swift in Sources */,
 				A55F8D5429D9B8050024C1F7 /* Parser.swift in Sources */,
 				A53FE04D29E0988B00A7D5C2 /* Context.swift in Sources */,
