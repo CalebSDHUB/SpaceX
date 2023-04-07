@@ -35,12 +35,10 @@ struct Constant {
         }
         
         struct NavigationItemButton {
-            static let title = "Filter by category"
+            static let title = "Sort by"
             static let newest = "Newest"
             static let oldest = "Oldest"
-            static let success = "Success"
-            static let failure = "Failure"
-            static let name = "Name"
+            static let name = "Alphabet"
         }
     }
     

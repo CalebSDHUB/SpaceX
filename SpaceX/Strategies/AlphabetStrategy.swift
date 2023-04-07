@@ -5,7 +5,7 @@
 //  Created by Caleb Danielsen on 07.04.2023.
 //
 
-final class TitleStrategy: Strategy {
+final class AlphabetStrategy: Strategy {
     func execute(viewModels: [ViewModel]) -> [ViewModel] {
         let launchViewModels = viewModels as! [LaunchViewModel]
         let sortedTitle = launchViewModels.map { $0.title }.enumerated().sorted(by: { $0 > $1 })
