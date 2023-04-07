@@ -33,6 +33,12 @@ struct Constant {
         struct Cell {
             static let identifier = "launch_screen_cell"
         }
+        
+        struct NavigationItemButton {
+            static let title = "Sort by"
+            static let date = "Date"
+            static let name = "Name"
+        }
     }
     
     struct View {
@@ -72,6 +78,6 @@ struct Constant {
     struct Error {
         static let badResponseMessage = "Bad response from the server"
         static let dataFailedMessage = "Data failed to unwrap"
-        static let parseResourceNameToURLFailedMessage = "Resource name failed to parse into URL"
+        static let parseStringToURLFailedMessage = "Resource name failed parsing into URL"
     }
 }

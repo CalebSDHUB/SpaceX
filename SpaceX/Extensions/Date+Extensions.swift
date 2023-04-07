@@ -8,11 +8,18 @@
 import Foundation
 
 extension Date {
-    static func utc(_ time: String, dateStyle: Date.FormatStyle.DateStyle, timeStyle: Date.FormatStyle.TimeStyle) -> String? {
+    static func utcTimeStringToDate(_ time: String) -> Date? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
         guard let date = dateFormatter.date(from: time) else { return nil }
-        return date.formatted(date: dateStyle, time: timeStyle)
+        return date
+    }
+    
+    static func dateToUtcTimeString(_ date: Date) -> String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+        dateFormatter.timeZone = TimeZone(abbreviation: "UTC")
+        return dateFormatter.string(from: date)
     }
 }

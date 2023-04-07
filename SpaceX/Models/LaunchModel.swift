@@ -24,7 +24,7 @@ struct LaunchModel: Decodable {
     let launchpad: String?
     let flightNumber: Int?
     let name: String?
-    let dateUTC: String?
+    var dateUTC: String?
     let dateUnix: Int?
     let dateLocal: String?
     let datePrecision: String?
