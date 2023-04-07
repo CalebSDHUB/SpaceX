@@ -63,12 +63,12 @@ extension LaunchScreenTableViewController {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.date, style: .default) { [weak self] _ in
-            Sort.setStrategy(strategy: DateStrategy())
+            Sort.setStrategy(strategy: DateSortStrategy())
             self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
-            Sort.setStrategy(strategy: NameStrategy())
+            Sort.setStrategy(strategy: NameSortStrategy())
             self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
             self?.tableView.reloadData()
         })
