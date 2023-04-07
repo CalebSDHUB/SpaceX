@@ -61,24 +61,41 @@ extension LaunchScreenTableViewController: WebManagerDelegate {
 extension LaunchScreenTableViewController {
     @objc private func launchFilterButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
+        
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.newest, style: .default) { [weak self] _ in
             let launchViewModels = self?.viewModels as! [LaunchViewModel]
-            let sortedDates = launchViewModels.map { $0.launchDate }.enumerated().sorted(by: { $0.element > $1.element })
+            let sortedDates = launchViewModels.map { $0.launchDate }.enumerated().sorted(by: { $0 > $1 })
             let sortedViewModels = sortedDates.map { launchViewModels[$0.offset] }
             self?.viewModels = sortedViewModels
             self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.oldest, style: .default) { [weak self] _ in
-            
+            let launchViewModels = self?.viewModels as! [LaunchViewModel]
+            let sortedDates = launchViewModels.map { $0.launchDate }.enumerated().sorted(by: { $0 < $1 })
+            let sortedViewModels = sortedDates.map { launchViewModels[$0.offset] }
+            self?.viewModels = sortedViewModels
+            self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.success, style: .default) { [weak self] _ in
-            
+            let launchViewModels = self?.viewModels as! [LaunchViewModel]
+            let filteredSuccess = launchViewModels.map({ $0.launchSuccess }).enumerated().filter({ $0.element == true })
+            let sortedViewModels = filteredSuccess.map { launchViewModels[$0.offset] }
+            self?.viewModels = sortedViewModels
+            self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.failure, style: .default) { [weak self] _ in
-            
+            let launchViewModels = self?.viewModels as! [LaunchViewModel]
+            let filteredFailures = launchViewModels.map({ $0.launchSuccess }).enumerated().filter({ $0.element == false })
+            let sortedViewModels = filteredFailures.map { launchViewModels[$0.offset] }
+            self?.viewModels = sortedViewModels
+            self?.tableView.reloadData()
         })
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
-            
+            let launchViewModels = self?.viewModels as! [LaunchViewModel]
+            let sortedTitle = launchViewModels.map { $0.title }.enumerated().sorted(by: { $0 > $1 })
+            let sortedViewModels = sortedTitle.map { launchViewModels[$0.offset] }
+            self?.viewModels = sortedViewModels
+            self?.tableView.reloadData()
         })
         
         alertController.view.tintColor = .orange
