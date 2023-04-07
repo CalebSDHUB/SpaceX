@@ -8,11 +8,24 @@
 import SwiftUI
 
 struct StatusView: View {
-    let launchViewModel: LaunchViewModel
+    enum StatusFormat {
+        case small, big
+        
+        var format: CGFloat {
+            switch self {
+            case .small: return Constant.View.Status.smallFormat
+            case .big: return Constant.View.Status.bigFormat
+            }
+        }
+    }
     
+    let launchViewModel: LaunchViewModel
     var status: Status {
         launchViewModel.launchSuccess ? .success : .failure
     }
+    
+    let statusFormat: StatusFormat
+    let maxWidth: CGFloat?
     
     enum Status {
         case failure
@@ -20,8 +33,8 @@ struct StatusView: View {
         
         var title: String {
             switch self {
-            case .failure: return "Failure"
-            case .success: return "Success"
+            case .failure: return Constant.View.Status.failure
+            case .success: return Constant.View.Status.success
             }
         }
         
@@ -34,11 +47,11 @@ struct StatusView: View {
     }
     var body: some View {
         Text(status.title)
-            .font(.title3)
+            .font(.system(size: statusFormat.format))
             .fontWeight(.heavy)
             .foregroundColor(.white)
-            .frame(maxWidth: .infinity)
-            .padding(.vertical)
+            .frame(maxWidth: maxWidth)
+            .padding()
             .background(status.color)
             .cornerRadius(10)
     }

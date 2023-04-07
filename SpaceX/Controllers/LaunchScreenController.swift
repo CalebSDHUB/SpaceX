@@ -9,36 +9,42 @@ import SwiftUI
 
 /// Reponsible for showing all past SpaceX launches
 final class LaunchScreenTableViewController: UITableViewController {
-    private var launchViewModels: [LaunchViewModel] = []
-
+    private var viewModels: [ViewModel] = []
+    private var webManager = ManagerFactory.create() as! WebManager
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = Constant.LaunchScreen.Title.name
         navigationController?.navigationBar.prefersLargeTitles = true
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
-        Task {
-            await populate()
-            tableView.reloadData()
-        }
+        webManager.delegate = self
+        webManager.update()
+        
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        launchViewModels.count
+        viewModels.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let launchViewModel = launchViewModels[indexPath.row]
+        let launchViewModel = viewModels[indexPath.row] as! LaunchViewModel
         let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
         cell.accessoryType = .disclosureIndicator
         cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: launchViewModel) }
         return cell
     }
     
-    private func populate() async {
-        do {
-            launchViewModels = try await ServiceFactory.create().fetch(resourceName: Constant.URL.spaceX)
-        } catch {
-            print(error.localizedDescription)
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let launchViewModel = viewModels[indexPath.row] as! LaunchViewModel
+        navigationController?.pushViewController(UIHostingController(rootView: DetailView(launchViewModel: launchViewModel)), animated: true)
+    }
+}
+
+extension LaunchScreenTableViewController: WebManagerDelegate {
+    func update(viewModels: [ViewModel]) {
+        Task {
+            self.viewModels = viewModels
+            tableView.reloadData()
         }
     }
 }
