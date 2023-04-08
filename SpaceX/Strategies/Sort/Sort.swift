@@ -7,10 +7,10 @@
 
 /// Responsible for setting and executing the current strategy using the Strategy Design Pattern
 final class Sort {
-    static private var strategy: Strategy!
+    static private var strategy: SortStrategy!
     private init() {}
     
-    static func setStrategy(strategy: Strategy) {
+    static func setStrategy(strategy: SortStrategy) {
         self.strategy = strategy
     }
     

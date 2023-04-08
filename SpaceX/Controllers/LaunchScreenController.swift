@@ -18,8 +18,14 @@ final class LaunchScreenTableViewController: UITableViewController {
         return webManager
     }()
     
+    private lazy var launchSortBarButtonItem: UIBarButtonItem = {
+        let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(launchSortButtonPressed))
+        barbuttomItem.tintColor = .orange
+        return barbuttomItem
+    }()
+    
     private lazy var launchFilterBarButtonItem: UIBarButtonItem = {
-        let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(launchFilterButtonPressed))
+        let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(launchFilterButtonPressed))
         barbuttomItem.tintColor = .orange
         return barbuttomItem
     }()
@@ -44,12 +50,13 @@ extension LaunchScreenTableViewController {
     private func setupUI() {
         title = Constant.LaunchScreen.Title.name
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = launchFilterBarButtonItem
+        navigationItem.leftBarButtonItem = launchFilterBarButtonItem
+        navigationItem.rightBarButtonItem = launchSortBarButtonItem
         navigationItem.searchController = searchController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
     }
     
-    @objc private func launchFilterButtonPressed() {
+    @objc private func launchSortButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
         alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.date, style: .default) { [weak self] _ in
@@ -71,6 +78,11 @@ extension LaunchScreenTableViewController {
     
     private func resetViewModelCurrent() {
         viewModelsCurrent = viewModelsOriginal
+    }
+    
+    @objc private func launchFilterButtonPressed() {
+        webManager.update()
+        resetViewModelCurrent()
     }
 }
 
@@ -109,12 +121,9 @@ extension LaunchScreenTableViewController {
 extension LaunchScreenTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
-        let launchViewModels = viewModelsOriginal as! [LaunchViewModel]
-        let filteredTitle = launchViewModels.map { $0.title }.enumerated().filter({ $0.element.localizedCaseInsensitiveContains(searchText) })
-        let filteredModels = filteredTitle.map { launchViewModels[$0.offset] }
-        
         if !searchText.isEmpty {
-            viewModelsCurrent = filteredModels
+            Filter.setStrategy(strategy: NameFilterStrategy())
+            viewModelsCurrent = Filter.executeStrategy(viewModels: viewModelsOriginal as! [LaunchViewModel], text: searchText)
         }
     }
 }
