@@ -30,9 +30,10 @@ final class LaunchScreenTableViewController: UITableViewController {
         return button
     }()
     
+    lazy var searchController = UISearchController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         setupUI()
         webManager.delegate = self
         webManager.update()
@@ -73,6 +74,7 @@ extension LaunchScreenTableViewController {
         title = Constant.LaunchScreen.Title.name
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = launchFilterBarButtonItem
+        navigationItem.searchController = searchController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
     }
     
