@@ -18,12 +18,22 @@ final class LaunchScreenTableViewController: UITableViewController {
         return barbuttomItem
     }()
     
+    lazy var deleteProductButton: UIButton = {
+        let button = UIButton(type: .roundedRect)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle("Delete", for: .normal)
+        button.configuration = .filled()
+        button.configuration?.baseForegroundColor = .white
+        button.configuration?.baseBackgroundColor = .systemPink
+        button.configuration?.image = UIImage(systemName: "book.fill")
+        button.configuration?.imagePadding = 6
+        return button
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = Constant.LaunchScreen.Title.name
-        navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.rightBarButtonItem = launchFilterBarButtonItem
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
+        
+        setupUI()
         webManager.delegate = self
         webManager.update()
         
@@ -59,6 +69,13 @@ extension LaunchScreenTableViewController: WebManagerDelegate {
 // MARK: - Private functions
 
 extension LaunchScreenTableViewController {
+    private func setupUI() {
+        title = Constant.LaunchScreen.Title.name
+        navigationController?.navigationBar.prefersLargeTitles = true
+        navigationItem.rightBarButtonItem = launchFilterBarButtonItem
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
+    }
+    
     @objc private func launchFilterButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
