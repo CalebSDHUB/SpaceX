@@ -12,25 +12,13 @@ final class LaunchScreenTableViewController: UITableViewController {
     private var viewModels: [ViewModel] = []
     private var webManager = ManagerFactory.create() as! WebManager
     
-    lazy var launchFilterBarButtonItem: UIBarButtonItem = {
+    private lazy var launchFilterBarButtonItem: UIBarButtonItem = {
         let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(launchFilterButtonPressed))
         barbuttomItem.tintColor = .orange
         return barbuttomItem
     }()
     
-    lazy var deleteProductButton: UIButton = {
-        let button = UIButton(type: .roundedRect)
-        button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle("Delete", for: .normal)
-        button.configuration = .filled()
-        button.configuration?.baseForegroundColor = .white
-        button.configuration?.baseBackgroundColor = .systemPink
-        button.configuration?.image = UIImage(systemName: "book.fill")
-        button.configuration?.imagePadding = 6
-        return button
-    }()
-    
-    lazy var searchController = UISearchController()
+    private lazy var searchController = UISearchController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
