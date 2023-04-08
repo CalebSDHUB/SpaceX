@@ -5,7 +5,7 @@
 //  Created by Caleb Danielsen on 07.04.2023.
 //
 
-final class DateStrategy: Strategy {
+final class DateSortStrategy: Strategy {
     func execute(viewModels: [ViewModel]) -> [ViewModel] {
         let launchViewModels = viewModels as! [LaunchViewModel]
         let sortedDates = launchViewModels.map { $0.launchDate }.enumerated().sorted(by: { $0 > $1 })

@@ -9,39 +9,68 @@ import SwiftUI
 
 /// Reponsible for showing all past SpaceX launches
 final class LaunchScreenTableViewController: UITableViewController {
-    private var viewModels: [ViewModel] = []
-    private var webManager = ManagerFactory.create() as! WebManager
+    private var viewModelsOriginal: [ViewModel] = [] { didSet { tableView.reloadData() } }
+    private var viewModelsCurrent: [ViewModel] = [] { didSet { tableView.reloadData() } }
     
-    lazy var launchFilterBarButtonItem: UIBarButtonItem = {
+    private lazy var webManager: WebManager = {
+        let webManager = ManagerFactory.create() as! WebManager
+        webManager.delegate = self
+        return webManager
+    }()
+    
+    private lazy var launchFilterBarButtonItem: UIBarButtonItem = {
         let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(launchFilterButtonPressed))
         barbuttomItem.tintColor = .orange
         return barbuttomItem
     }()
     
+    private lazy var searchController: UISearchController = {
+        let searchController = UISearchController()
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        return searchController
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupUI()
+        webManager.update()
+    }
+}
+
+// MARK: - Private functions
+
+extension LaunchScreenTableViewController {
+    private func setupUI() {
         title = Constant.LaunchScreen.Title.name
         navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.rightBarButtonItem = launchFilterBarButtonItem
+        navigationItem.searchController = searchController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
-        webManager.delegate = self
-        webManager.update()
+    }
+    
+    @objc private func launchFilterButtonPressed() {
+        let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.date, style: .default) { [weak self] _ in
+            guard let self else { return }
+            Sort.setStrategy(strategy: DateSortStrategy())
+            self.viewModelsCurrent = Sort.executeStrategy(viewModels: self.viewModelsCurrent as! [LaunchViewModel])
+            self.viewModelsOriginal = self.viewModelsCurrent
+        })
+        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
+            guard let self else { return }
+            Sort.setStrategy(strategy: NameSortStrategy())
+            self.viewModelsCurrent = Sort.executeStrategy(viewModels: self.viewModelsCurrent as! [LaunchViewModel])
+            self.viewModelsOriginal = self.viewModelsCurrent
+        })
+        
+        alertController.view.tintColor = .orange
+        present(alertController, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModels.count
-    }
-    
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
-        cell.accessoryType = .disclosureIndicator
-        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: viewModels[indexPath.row] as! LaunchViewModel) }
-        return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        navigationController?.pushViewController(UIHostingController(rootView: DetailView(launchViewModel: viewModels[indexPath.row] as! LaunchViewModel)), animated: true)
+    private func resetViewModelCurrent() {
+        viewModelsCurrent = viewModelsOriginal
     }
 }
 
@@ -50,31 +79,61 @@ final class LaunchScreenTableViewController: UITableViewController {
 extension LaunchScreenTableViewController: WebManagerDelegate {
     func update(viewModels: [ViewModel]) {
         Task {
-            self.viewModels = viewModels
-            tableView.reloadData()
+            viewModelsOriginal = viewModels
+            viewModelsCurrent = viewModels
         }
     }
 }
 
-// MARK: - Private functions
+// MARK: - UITableViewController override functions
 
 extension LaunchScreenTableViewController {
-    @objc private func launchFilterButtonPressed() {
-        let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
-        
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.date, style: .default) { [weak self] _ in
-            Sort.setStrategy(strategy: DateStrategy())
-            self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
-            self?.tableView.reloadData()
-        })
-        alertController.addAction(UIAlertAction(title: Constant.LaunchScreen.NavigationItemButton.name, style: .default) { [weak self] _ in
-            Sort.setStrategy(strategy: NameStrategy())
-            self?.viewModels = Sort.executeStrategy(viewModels: self?.viewModels as! [LaunchViewModel])
-            self?.tableView.reloadData()
-        })
-        
-        alertController.view.tintColor = .orange
-        present(alertController, animated: true)
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModelsCurrent.count
+    }
+    
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: Constant.LaunchScreen.Cell.identifier, for: indexPath)
+        cell.accessoryType = .disclosureIndicator
+        cell.contentConfiguration = UIHostingConfiguration { LaunchCellView(launchViewModel: viewModelsCurrent[indexPath.row] as! LaunchViewModel) }
+        return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        navigationController?.pushViewController(UIHostingController(rootView: DetailView(launchViewModel: viewModelsCurrent[indexPath.row] as! LaunchViewModel)), animated: true)
     }
 }
+
+// MARK: - UISearchResultsUpdating
+
+extension LaunchScreenTableViewController: UISearchResultsUpdating {
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let searchText = searchController.searchBar.text else { return }
+        let launchViewModels = viewModelsOriginal as! [LaunchViewModel]
+        let filteredTitle = launchViewModels.map { $0.title }.enumerated().filter({ $0.element.localizedCaseInsensitiveContains(searchText) })
+        let filteredModels = filteredTitle.map { launchViewModels[$0.offset] }
+        
+        if !searchText.isEmpty {
+            viewModelsCurrent = filteredModels
+        }
+    }
+}
+
+// MARK: - UISearchBarDelegate
+
+extension LaunchScreenTableViewController: UISearchBarDelegate {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        resetViewModelCurrent()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        guard let searchText = searchController.searchBar.text else { return }
+        if !searchText.isEmpty {
+            searchBar.text = ""
+            searchController.isActive = false
+        }
+
+    }
+}
+
 
