@@ -121,12 +121,9 @@ extension LaunchScreenTableViewController {
 extension LaunchScreenTableViewController: UISearchResultsUpdating {
     func updateSearchResults(for searchController: UISearchController) {
         guard let searchText = searchController.searchBar.text else { return }
-        let launchViewModels = viewModelsOriginal as! [LaunchViewModel]
-        let filteredTitle = launchViewModels.map { $0.title }.enumerated().filter({ $0.element.localizedCaseInsensitiveContains(searchText) })
-        let filteredModels = filteredTitle.map { launchViewModels[$0.offset] }
-        
         if !searchText.isEmpty {
-            viewModelsCurrent = filteredModels
+            Filter.setStrategy(strategy: NameFilterStrategy())
+            viewModelsCurrent = Filter.executeStrategy(viewModels: viewModelsOriginal as! [LaunchViewModel], text: searchText)
         }
     }
 }
