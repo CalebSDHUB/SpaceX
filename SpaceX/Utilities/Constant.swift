@@ -39,6 +39,10 @@ struct Constant {
             static let date = "Date"
             static let name = "Name"
         }
+        
+        struct Sleep {
+            static let time = 6000
+        }
     }
     
     struct View {
@@ -79,5 +83,9 @@ struct Constant {
         static let badResponseMessage = "Bad response from the server"
         static let dataFailedMessage = "Data failed to unwrap"
         static let parseStringToURLFailedMessage = "Resource name failed parsing into URL"
+    }
+    
+    struct WebManagerDelegate {
+        static let updated = "Updating..."
     }
 }

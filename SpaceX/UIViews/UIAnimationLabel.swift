@@ -7,21 +7,10 @@
 
 import UIKit
 
-class UIAnimationLabel: UILabel {
-    enum MessageStatus {
-        case normal, warning
-        
-        var uiColor: UIColor {
-            switch self {
-            case .normal: return .primary
-            case .warning: return .red
-            }
-        }
-    }
-    
+class UIAnimationLabel: UILabel {    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        animationReadyUI()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -34,7 +23,7 @@ class UIAnimationLabel: UILabel {
     }
     
     func animate() {
-        UIView.animate(withDuration: 2, animations: {
+        UIView.animate(withDuration: 1, animations: {
             self.alpha = 1
         }, completion: { [weak self] finished in
             if finished {
@@ -44,12 +33,13 @@ class UIAnimationLabel: UILabel {
     }
     
     private func fadeOut() {
-        UIView.animate(withDuration: 2, delay: 2, animations: { [weak self] in
+        UIView.animate(withDuration: 1, delay: 1, animations: { [weak self] in
             self?.alpha = 0
         })
     }
     
-    func animationReadyUI() {
+    func setupUI() {
         self.alpha = 0
+        self.adjustsFontSizeToFitWidth = true
     }
 }

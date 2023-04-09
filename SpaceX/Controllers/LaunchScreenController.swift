@@ -59,18 +59,17 @@ extension LaunchScreenTableViewController {
         navigationItem.rightBarButtonItem = launchSortBarButtonItem
         navigationItem.searchController = searchController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
-//        addConstraints()
+        addConstraints()
     }
     
-//    private func addConstraints() {
-//        messageAnimation.translatesAutoresizingMaskIntoConstraints = false
-//
-//        view.addSubview(messageAnimation)
-//        NSLayoutConstraint.activate([
-//            messageAnimation.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-//            messageAnimation.topAnchor.constraint(equalTo: view.topAnchor)
-//        ])
-//    }
+    private func addConstraints() {
+        messageAnimation.translatesAutoresizingMaskIntoConstraints = false
+        if let titleView = navigationItem.titleView {
+            NSLayoutConstraint.activate([
+                messageAnimation.centerXAnchor.constraint(equalTo: titleView.centerXAnchor)
+            ])
+        }
+    }
     
     @objc private func launchSortButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
@@ -95,13 +94,6 @@ extension LaunchScreenTableViewController {
     @objc private func launchRefreshButtonPressed() {
         webManager.update()
         resetViewModelCurrent()
-        messageAnimation.message("Hello", status: .normal)
-        navigationItem.titleView = messageAnimation
-        messageAnimation.animate()
-        Task {
-            try? await Task.sleep(for: Duration.milliseconds(6000))
-            navigationItem.titleView = nil
-        }
     }
     
     private func resetViewModelCurrent() {
@@ -116,6 +108,16 @@ extension LaunchScreenTableViewController: WebManagerDelegate {
         Task {
             viewModelsOriginal = viewModels
             viewModelsCurrent = viewModels
+        }
+    }
+    
+    func message(text: String) {
+        Task {
+            messageAnimation.message(text, status: .normal)
+            navigationItem.titleView = messageAnimation
+            messageAnimation.animate()
+            try? await Task.sleep(for: Duration.milliseconds(Constant.LaunchScreen.Sleep.time))
+            navigationItem.titleView = nil
         }
     }
 }
@@ -164,6 +166,6 @@ extension LaunchScreenTableViewController: UISearchBarDelegate {
             searchBar.text = ""
             searchController.isActive = false
         }
-
+        
     }
 }

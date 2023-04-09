@@ -19,8 +19,9 @@ final class WebManager: Manager {
             do {
                 let viewModels = try await ServiceFactory.create().fetch(resourceName: Constant.URL.spaceXapi)
                 delegate?.update(viewModels: viewModels)
+                delegate?.message(text: Constant.WebManagerDelegate.updated)
             } catch {
-                print(error.localizedDescription)
+                delegate?.message(text: error.localizedDescription)
             }
         }
     }

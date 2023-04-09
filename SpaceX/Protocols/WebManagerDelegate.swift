@@ -7,4 +7,5 @@
 
 protocol WebManagerDelegate {
     func update(viewModels: [ViewModel])
+    func message(text: String)
 }
