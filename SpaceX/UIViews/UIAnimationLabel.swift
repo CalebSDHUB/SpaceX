@@ -7,7 +7,18 @@
 
 import UIKit
 
-class AnimationLabel: UILabel {
+class UIAnimationLabel: UILabel {
+    enum MessageStatus {
+        case success, failure
+        
+        var color: UIColor {
+            switch self {
+            case .success: return .white
+            case .failure: return .red
+            }
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         animationReadyUI()
@@ -17,9 +28,13 @@ class AnimationLabel: UILabel {
         super.init(coder: coder)
     }
     
+    func message(_ text: String, status: MessageStatus) {
+        
+    }
+    
     func animate() {
         UIView.animate(withDuration: 2, animations: {
-            self.alpha = 1 // Set label to fully visible
+            self.alpha = 1
         }, completion: { [weak self] finished in
             if finished {
                 self?.fadeOut()
@@ -28,8 +43,8 @@ class AnimationLabel: UILabel {
     }
     
     private func fadeOut() {
-        UIView.animate(withDuration: 2, delay: 2, animations: {
-            self.alpha = 0
+        UIView.animate(withDuration: 2, delay: 2, animations: { [weak self] in
+            self?.alpha = 0
         })
     }
     

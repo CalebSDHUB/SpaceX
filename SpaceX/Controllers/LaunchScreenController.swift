@@ -25,7 +25,7 @@ final class LaunchScreenTableViewController: UITableViewController {
     }()
     
     private lazy var launchFilterBarButtonItem: UIBarButtonItem = {
-        let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(launchFilterButtonPressed))
+        let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(launchRefreshButtonPressed))
         barbuttomItem.tintColor = .orange
         return barbuttomItem
     }()
@@ -35,6 +35,11 @@ final class LaunchScreenTableViewController: UITableViewController {
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         return searchController
+    }()
+    
+    private lazy var messageAnimation: UIAnimationLabel = {
+        let animationMessage = UIAnimationLabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        return animationMessage
     }()
     
     override func viewDidLoad() {
@@ -54,7 +59,18 @@ extension LaunchScreenTableViewController {
         navigationItem.rightBarButtonItem = launchSortBarButtonItem
         navigationItem.searchController = searchController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
+//        addConstraints()
     }
+    
+//    private func addConstraints() {
+//        messageAnimation.translatesAutoresizingMaskIntoConstraints = false
+//
+//        view.addSubview(messageAnimation)
+//        NSLayoutConstraint.activate([
+//            messageAnimation.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//            messageAnimation.topAnchor.constraint(equalTo: view.topAnchor)
+//        ])
+//    }
     
     @objc private func launchSortButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
@@ -76,13 +92,21 @@ extension LaunchScreenTableViewController {
         present(alertController, animated: true)
     }
     
-    private func resetViewModelCurrent() {
-        viewModelsCurrent = viewModelsOriginal
-    }
-    
-    @objc private func launchFilterButtonPressed() {
+    @objc private func launchRefreshButtonPressed() {
         webManager.update()
         resetViewModelCurrent()
+        messageAnimation.textColor = .red
+        messageAnimation.text = "Message"
+        navigationItem.titleView = messageAnimation
+        messageAnimation.animate()
+        Task {
+            try? await Task.sleep(for: Duration.milliseconds(6000))
+            navigationItem.titleView = nil
+        }
+    }
+    
+    private func resetViewModelCurrent() {
+        viewModelsCurrent = viewModelsOriginal
     }
 }
 
@@ -144,5 +168,3 @@ extension LaunchScreenTableViewController: UISearchBarDelegate {
 
     }
 }
-
-
