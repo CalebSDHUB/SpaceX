@@ -51,6 +51,7 @@
 		A5C06DB529E20FD200EC5F4B /* NameFilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DB429E20FD200EC5F4B /* NameFilterStrategy.swift */; };
 		A5C06DB929E211A000EC5F4B /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DB829E211A000EC5F4B /* FilterStrategy.swift */; };
 		A5C06DBB29E2120D00EC5F4B /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DBA29E2120D00EC5F4B /* Filter.swift */; };
+		A5C06DE029E34C7600EC5F4B /* UIAnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DDF29E34C7600EC5F4B /* UIAnimationLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -119,6 +120,7 @@
 		A5C06DB429E20FD200EC5F4B /* NameFilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameFilterStrategy.swift; sourceTree = "<group>"; };
 		A5C06DB829E211A000EC5F4B /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
 		A5C06DBA29E2120D00EC5F4B /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
+		A5C06DDF29E34C7600EC5F4B /* UIAnimationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimationLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 				A5C06C7129D9875900A81002 /* ViewModels */,
 				A5C06C6B29D9758500A81002 /* Models */,
 				A57E25B729DB549100B628FF /* Views */,
+				A5C06DDE29E34C2B00EC5F4B /* UIViews */,
 				A57E25B629DA232D00B628FF /* Controllers */,
 				A5C06C3B29D8ADF100A81002 /* AppDelegate.swift */,
 				A5C06C3D29D8ADF100A81002 /* SceneDelegate.swift */,
@@ -350,6 +353,14 @@
 				A5C06DBA29E2120D00EC5F4B /* Filter.swift */,
 			);
 			path = Filter;
+			sourceTree = "<group>";
+		};
+		A5C06DDE29E34C2B00EC5F4B /* UIViews */ = {
+			isa = PBXGroup;
+			children = (
+				A5C06DDF29E34C7600EC5F4B /* UIAnimationLabel.swift */,
+			);
+			path = UIViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -505,6 +516,7 @@
 				A55F8D4F29D9B0E50024C1F7 /* WebserviceError.swift in Sources */,
 				A57E25C529DC153300B628FF /* WebManager.swift in Sources */,
 				A55F8D5A29D9E67A0024C1F7 /* MockService.swift in Sources */,
+				A5C06DE029E34C7600EC5F4B /* UIAnimationLabel.swift in Sources */,
 				A53FE05529E09EA700A7D5C2 /* NameSortStrategy.swift in Sources */,
 				A55F8D5C29D9E7790024C1F7 /* File.swift in Sources */,
 				A55F8D5829D9DD890024C1F7 /* Constant.swift in Sources */,
