@@ -71,6 +71,13 @@ extension LaunchScreenTableViewController {
         }
     }
     
+    private func messageAnimationTitleView() async throws {
+        navigationItem.titleView = messageAnimation
+        messageAnimation.animate()
+        try await Task.sleep(for: Duration.milliseconds(Constant.LaunchScreen.Sleep.time))
+        navigationItem.titleView = nil
+    }
+    
     @objc private func launchSortButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
@@ -93,7 +100,6 @@ extension LaunchScreenTableViewController {
     
     @objc private func launchRefreshButtonPressed() {
         webManager.update()
-        resetViewModelCurrent()
     }
     
     private func resetViewModelCurrent() {
@@ -104,20 +110,17 @@ extension LaunchScreenTableViewController {
 // MARK: - WebManagerDelegate
 
 extension LaunchScreenTableViewController: WebManagerDelegate {
-    func update(viewModels: [ViewModel]) {
+    func didUpdate(viewModels: [ViewModel]?, text: String, messageStatus: MessageStatus) {
         Task {
-            viewModelsOriginal = viewModels
-            viewModelsCurrent = viewModels
-        }
-    }
-    
-    func message(text: String) {
-        Task {
-            messageAnimation.message(text, status: .normal)
-            navigationItem.titleView = messageAnimation
-            messageAnimation.animate()
-            try? await Task.sleep(for: Duration.milliseconds(Constant.LaunchScreen.Sleep.time))
-            navigationItem.titleView = nil
+            if let viewModels,
+               messageStatus == .normal {
+                viewModelsOriginal = viewModels
+                viewModelsCurrent = viewModels
+                resetViewModelCurrent()
+            }
+            
+            messageAnimation.message(text, messageStatus: messageStatus)
+            try? await messageAnimationTitleView()
         }
     }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class UIAnimationLabel: UILabel {    
+class UIAnimationLabel: UILabel {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -17,13 +17,13 @@ class UIAnimationLabel: UILabel {
         super.init(coder: coder)
     }
     
-    func message(_ text: String, status: MessageStatus) {
+    func message(_ text: String, messageStatus: MessageStatus) {
         self.text = text
-        self.textColor = status.uiColor
+        self.textColor = messageStatus.uiColor
     }
     
     func animate() {
-        UIView.animate(withDuration: 1, animations: {
+        UIView.animate(withDuration: 0.5, animations: {
             self.alpha = 1
         }, completion: { [weak self] finished in
             if finished {
@@ -33,12 +33,12 @@ class UIAnimationLabel: UILabel {
     }
     
     private func fadeOut() {
-        UIView.animate(withDuration: 1, delay: 1, animations: { [weak self] in
+        UIView.animate(withDuration: 1.5, delay: 1, animations: { [weak self] in
             self?.alpha = 0
         })
     }
     
-    func setupUI() {
+    private func setupUI() {
         self.alpha = 0
         self.adjustsFontSizeToFitWidth = true
     }

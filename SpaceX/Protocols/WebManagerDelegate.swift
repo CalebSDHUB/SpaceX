@@ -6,6 +6,5 @@
 //
 
 protocol WebManagerDelegate {
-    func update(viewModels: [ViewModel])
-    func message(text: String)
+    func didUpdate(viewModels: [ViewModel]?, text: String, messageStatus: MessageStatus)
 }

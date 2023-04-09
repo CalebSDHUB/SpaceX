@@ -41,7 +41,7 @@ struct Constant {
         }
         
         struct Sleep {
-            static let time = 6000
+            static let time = 3000
         }
     }
     
