@@ -9,12 +9,12 @@ import UIKit
 
 class UIAnimationLabel: UILabel {
     enum MessageStatus {
-        case success, failure
+        case normal, warning
         
-        var color: UIColor {
+        var uiColor: UIColor {
             switch self {
-            case .success: return .white
-            case .failure: return .red
+            case .normal: return .primary
+            case .warning: return .red
             }
         }
     }
@@ -29,7 +29,8 @@ class UIAnimationLabel: UILabel {
     }
     
     func message(_ text: String, status: MessageStatus) {
-        
+        self.text = text
+        self.textColor = status.uiColor
     }
     
     func animate() {

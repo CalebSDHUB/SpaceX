@@ -38,7 +38,7 @@ final class LaunchScreenTableViewController: UITableViewController {
     }()
     
     private lazy var messageAnimation: UIAnimationLabel = {
-        let animationMessage = UIAnimationLabel(frame: CGRect(x: 0, y: 0, width: 200, height: 50))
+        let animationMessage = UIAnimationLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
         return animationMessage
     }()
     
@@ -95,8 +95,7 @@ extension LaunchScreenTableViewController {
     @objc private func launchRefreshButtonPressed() {
         webManager.update()
         resetViewModelCurrent()
-        messageAnimation.textColor = .red
-        messageAnimation.text = "Message"
+        messageAnimation.message("Hello", status: .normal)
         navigationItem.titleView = messageAnimation
         messageAnimation.animate()
         Task {

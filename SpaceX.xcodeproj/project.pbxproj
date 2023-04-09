@@ -52,7 +52,7 @@
 		A5C06DB929E211A000EC5F4B /* FilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DB829E211A000EC5F4B /* FilterStrategy.swift */; };
 		A5C06DBB29E2120D00EC5F4B /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DBA29E2120D00EC5F4B /* Filter.swift */; };
 		A5C06DE029E34C7600EC5F4B /* UIAnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DDF29E34C7600EC5F4B /* UIAnimationLabel.swift */; };
-		A5C06DE229E362A100EC5F4B /* Color+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DE129E362A100EC5F4B /* Color+Extensions.swift */; };
+		A5C06DE229E362A100EC5F4B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DE129E362A100EC5F4B /* UIColor+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,7 +122,7 @@
 		A5C06DB829E211A000EC5F4B /* FilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterStrategy.swift; sourceTree = "<group>"; };
 		A5C06DBA29E2120D00EC5F4B /* Filter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		A5C06DDF29E34C7600EC5F4B /* UIAnimationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimationLabel.swift; sourceTree = "<group>"; };
-		A5C06DE129E362A100EC5F4B /* Color+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Extensions.swift"; sourceTree = "<group>"; };
+		A5C06DE129E362A100EC5F4B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,7 +178,7 @@
 				A55F8D4229D991ED0024C1F7 /* Date+Extensions.swift */,
 				A5BAFB8529DE2CC2008AF71C /* View+Extensions.swift */,
 				A53FE04329DF49AA00A7D5C2 /* String+Extensions.swift */,
-				A5C06DE129E362A100EC5F4B /* Color+Extensions.swift */,
+				A5C06DE129E362A100EC5F4B /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -533,7 +533,7 @@
 				A57E25B929DB54BC00B628FF /* LaunchCellView.swift in Sources */,
 				A5BAFB8629DE2CC2008AF71C /* View+Extensions.swift in Sources */,
 				A5C06C3E29D8ADF100A81002 /* SceneDelegate.swift in Sources */,
-				A5C06DE229E362A100EC5F4B /* Color+Extensions.swift in Sources */,
+				A5C06DE229E362A100EC5F4B /* UIColor+Extensions.swift in Sources */,
 				A53FE04629DF4A9300A7D5C2 /* ContentView.swift in Sources */,
 				A55F8D4329D991ED0024C1F7 /* Date+Extensions.swift in Sources */,
 				A57E25BD29DB79ED00B628FF /* TitleView.swift in Sources */,
