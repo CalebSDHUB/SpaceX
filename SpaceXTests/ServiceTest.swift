@@ -13,11 +13,11 @@ import XCTest
 final class ServiceTest: XCTestCase {
     
     private var service: Service!
-    private var webManager: WebManager!
+    private var webManager: Manager!
 
     override func setUp() {
         service = ServiceFactory.create()
-        webManager = WebManager.shared
+        webManager = Manager.shared
     }
     override func tearDown() {}
     

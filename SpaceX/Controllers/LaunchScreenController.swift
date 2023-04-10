@@ -12,8 +12,8 @@ final class LaunchScreenTableViewController: UITableViewController {
     private var viewModelsOriginal: [ViewModel] = [] { didSet { tableView.reloadData() } }
     private var viewModelsCurrent: [ViewModel] = [] { didSet { tableView.reloadData() } }
     
-    private lazy var webManager: WebManager = {
-        let webManager = WebManager.shared
+    private lazy var webManager: Manager = {
+        let webManager = Manager.shared
         webManager.delegate = self
         return webManager
     }()
