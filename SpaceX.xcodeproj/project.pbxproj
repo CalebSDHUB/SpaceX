@@ -705,7 +705,7 @@
 				DEVELOPMENT_TEAM = 2VVNCY5AAT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceX/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SpaceX;
+				INFOPLIST_KEY_CFBundleDisplayName = "SpaceX Launch";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
@@ -736,7 +736,7 @@
 				DEVELOPMENT_TEAM = 2VVNCY5AAT;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = SpaceX/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = SpaceX;
+				INFOPLIST_KEY_CFBundleDisplayName = "SpaceX Launch";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
