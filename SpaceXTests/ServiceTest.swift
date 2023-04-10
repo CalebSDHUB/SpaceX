@@ -22,7 +22,7 @@ final class ServiceTest: XCTestCase {
     override func tearDown() {}
     
     func test_mock_service_successful() async {
-        let launchViewModels = try? await service.fetch(resourceName: Constant.File.ResourceName.spaceXLaunch)
+        let launchViewModels = try? await service.fetch(resourceName: Constant.File.FileName.spaceXLaunch)
         XCTAssertNotNil(launchViewModels)
     }
     

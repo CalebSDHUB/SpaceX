@@ -20,9 +20,13 @@ struct Constant {
             static let json = "json"
         }
         
-        struct ResourceName {
+        struct FileName {
             static let spaceXLaunch = "spacex-launch"
         }
+    }
+    
+    struct ResourceName {
+        static var current: ResourceName = .web
     }
     
     struct LaunchScreen {

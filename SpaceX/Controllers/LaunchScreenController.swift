@@ -12,10 +12,10 @@ final class LaunchScreenTableViewController: UITableViewController {
     private var viewModelsOriginal: [ViewModel] = [] { didSet { tableView.reloadData() } }
     private var viewModelsCurrent: [ViewModel] = [] { didSet { tableView.reloadData() } }
     
-    private lazy var webManager: Manager = {
-        let webManager = Manager.shared
-        webManager.delegate = self
-        return webManager
+    private lazy var manager: Manager = {
+        let manager = Manager.shared
+        manager.delegate = self
+        return manager
     }()
     
     private lazy var launchSortBarButtonItem: UIBarButtonItem = {
@@ -45,7 +45,7 @@ final class LaunchScreenTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        webManager.update()
+        manager.update()
     }
 }
 
@@ -103,7 +103,7 @@ extension LaunchScreenTableViewController {
     }
     
     @objc private func launchRefreshButtonPressed() {
-        webManager.update()
+        manager.update()
     }
 }
 

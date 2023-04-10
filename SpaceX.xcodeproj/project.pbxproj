@@ -52,6 +52,7 @@
 		A5C06DE029E34C7600EC5F4B /* UIAnimationLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DDF29E34C7600EC5F4B /* UIAnimationLabel.swift */; };
 		A5C06DE229E362A100EC5F4B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DE129E362A100EC5F4B /* UIColor+Extensions.swift */; };
 		A5C06DE529E36CD300EC5F4B /* StatusMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DE429E36CD300EC5F4B /* StatusMessage.swift */; };
+		A5C06DEA29E46B4800EC5F4B /* ResourceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DE929E46B4800EC5F4B /* ResourceName.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -121,6 +122,7 @@
 		A5C06DDF29E34C7600EC5F4B /* UIAnimationLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIAnimationLabel.swift; sourceTree = "<group>"; };
 		A5C06DE129E362A100EC5F4B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		A5C06DE429E36CD300EC5F4B /* StatusMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusMessage.swift; sourceTree = "<group>"; };
+		A5C06DE929E46B4800EC5F4B /* ResourceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceName.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -367,6 +369,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C06DE429E36CD300EC5F4B /* StatusMessage.swift */,
+				A5C06DE929E46B4800EC5F4B /* ResourceName.swift */,
 			);
 			path = Options;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				A57E25C129DB7A5F00B628FF /* StatusView.swift in Sources */,
 				A5C06DBB29E2120D00EC5F4B /* Filter.swift in Sources */,
 				A5C06C6D29D9780800A81002 /* LaunchModel.swift in Sources */,
+				A5C06DEA29E46B4800EC5F4B /* ResourceName.swift in Sources */,
 				A53FE04429DF49AA00A7D5C2 /* String+Extensions.swift in Sources */,
 				A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */,
 				A57E25C929DCC78A00B628FF /* DetailView.swift in Sources */,

@@ -17,13 +17,16 @@ final class ServiceFactory {
         if let environment = ProcessInfo.processInfo.environment["-test"] {
                 /// Test
             if environment == "TEST" {
+                Constant.ResourceName.current = .file
                 return MockWebservice.shared
                 /// Production (other environment variable)
             } else {
+                Constant.ResourceName.current = .web
                 return Webservice.shared
             }
             /// Production (no environment variable selected)
         } else {
+            Constant.ResourceName.current = .web
             return Webservice.shared
         }
     }
