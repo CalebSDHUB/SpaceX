@@ -13,7 +13,8 @@ final class LaunchScreenTableViewController: UITableViewController {
     private var viewModelsCurrent: [ViewModel] = [] { didSet { tableView.reloadData() } }
     
     private lazy var webManager: WebManager = {
-        let webManager = ManagerFactory.create() as! WebManager
+        let webManager = WebManager.shared
+        let manager: Manager = webManager
         webManager.delegate = self
         return webManager
     }()
@@ -38,7 +39,7 @@ final class LaunchScreenTableViewController: UITableViewController {
     }()
     
     private lazy var messageAnimation: UIAnimationLabel = {
-        let animationMessage = UIAnimationLabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+        let animationMessage = UIAnimationLabel(frame: CGRect())
         return animationMessage
     }()
     
@@ -78,6 +79,10 @@ extension LaunchScreenTableViewController {
         navigationItem.titleView = nil
     }
     
+    private func resetViewModelCurrent() {
+        viewModelsCurrent = viewModelsOriginal
+    }
+    
     @objc private func launchSortButtonPressed() {
         let alertController = UIAlertController(title: Constant.LaunchScreen.NavigationItemButton.title, message: nil, preferredStyle: .actionSheet)
         
@@ -100,10 +105,6 @@ extension LaunchScreenTableViewController {
     
     @objc private func launchRefreshButtonPressed() {
         webManager.update()
-    }
-    
-    private func resetViewModelCurrent() {
-        viewModelsCurrent = viewModelsOriginal
     }
 }
 
