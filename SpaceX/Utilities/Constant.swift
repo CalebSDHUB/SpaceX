@@ -31,7 +31,7 @@ struct Constant {
     
     struct LaunchScreen {
         struct Title {
-            static let name = "SpaceX Launches"
+            static let name = "SpaceX Launch"
         }
         
         struct Cell {
