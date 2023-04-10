@@ -92,4 +92,8 @@ struct Constant {
     struct WebManagerDelegate {
         static let updated = "Updating..."
     }
+    
+    struct BackgroundImage {
+        static let name = "spacex-launch-background"
+    }
 }

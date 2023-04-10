@@ -51,6 +51,7 @@ struct LogoView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(width: logoFormat.format, height: logoFormat.format)
+                    .opacity(0)
             }
             
         }
