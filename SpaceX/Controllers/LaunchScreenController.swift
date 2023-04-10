@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-/// Reponsible for showing all past SpaceX launches
+/// Reponsible for showing the main SpaceX launch screen
 final class LaunchScreenTableViewController: UITableViewController {
     private var viewModelsOriginal: [ViewModel] = [] { didSet { tableView.reloadData() } }
     private var viewModelsCurrent: [ViewModel] = [] { didSet { tableView.reloadData() } }
     
-    private lazy var webManager: WebManager = {
-        let webManager = ManagerFactory.create() as! WebManager
-        webManager.delegate = self
-        return webManager
+    private lazy var manager: Manager = {
+        let manager = Manager.shared
+        manager.delegate = self
+        return manager
     }()
     
     private lazy var launchSortBarButtonItem: UIBarButtonItem = {
@@ -25,7 +25,7 @@ final class LaunchScreenTableViewController: UITableViewController {
     }()
     
     private lazy var launchFilterBarButtonItem: UIBarButtonItem = {
-        let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(launchFilterButtonPressed))
+        let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(launchRefreshButtonPressed))
         barbuttomItem.tintColor = .orange
         return barbuttomItem
     }()
@@ -37,10 +37,15 @@ final class LaunchScreenTableViewController: UITableViewController {
         return searchController
     }()
     
+    private lazy var messageAnimation: UIAnimationLabel = {
+        let animationMessage = UIAnimationLabel(frame: CGRect())
+        return animationMessage
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        webManager.update()
+        manager.update()
     }
 }
 
@@ -54,6 +59,27 @@ extension LaunchScreenTableViewController {
         navigationItem.rightBarButtonItem = launchSortBarButtonItem
         navigationItem.searchController = searchController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)
+        addConstraints()
+    }
+    
+    private func addConstraints() {
+        messageAnimation.translatesAutoresizingMaskIntoConstraints = false
+        if let titleView = navigationItem.titleView {
+            NSLayoutConstraint.activate([
+                messageAnimation.centerXAnchor.constraint(equalTo: titleView.centerXAnchor)
+            ])
+        }
+    }
+    
+    private func messageAnimationTitleView() async throws {
+        navigationItem.titleView = messageAnimation
+        messageAnimation.animate()
+        try await Task.sleep(for: Duration.milliseconds(Constant.LaunchScreen.Sleep.time))
+        navigationItem.titleView = nil
+    }
+    
+    private func resetViewModelCurrent() {
+        viewModelsCurrent = viewModelsOriginal
     }
     
     @objc private func launchSortButtonPressed() {
@@ -76,23 +102,25 @@ extension LaunchScreenTableViewController {
         present(alertController, animated: true)
     }
     
-    private func resetViewModelCurrent() {
-        viewModelsCurrent = viewModelsOriginal
-    }
-    
-    @objc private func launchFilterButtonPressed() {
-        webManager.update()
-        resetViewModelCurrent()
+    @objc private func launchRefreshButtonPressed() {
+        manager.update()
     }
 }
 
 // MARK: - WebManagerDelegate
 
 extension LaunchScreenTableViewController: WebManagerDelegate {
-    func update(viewModels: [ViewModel]) {
+    func didUpdate(viewModels: [ViewModel]?, text: String, messageStatus: MessageStatusOption) {
         Task {
-            viewModelsOriginal = viewModels
-            viewModelsCurrent = viewModels
+            if let viewModels,
+               messageStatus == .normal {
+                viewModelsOriginal = viewModels
+                viewModelsCurrent = viewModels
+                resetViewModelCurrent()
+            }
+            
+            messageAnimation.message(text, messageStatus: messageStatus)
+            try? await messageAnimationTitleView()
         }
     }
 }
@@ -141,8 +169,5 @@ extension LaunchScreenTableViewController: UISearchBarDelegate {
             searchBar.text = ""
             searchController.isActive = false
         }
-
     }
 }
-
-

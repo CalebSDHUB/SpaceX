@@ -45,6 +45,7 @@ struct StatusView: View {
             }
         }
     }
+    
     var body: some View {
         Text(status.title)
             .font(.system(size: statusFormat.format))

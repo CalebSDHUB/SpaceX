@@ -20,9 +20,13 @@ struct Constant {
             static let json = "json"
         }
         
-        struct ResourceName {
+        struct FileName {
             static let spaceXLaunch = "spacex-launch"
         }
+    }
+    
+    struct ResourceName {
+        static var current: ResourceNameOption = .web
     }
     
     struct LaunchScreen {
@@ -38,6 +42,10 @@ struct Constant {
             static let title = "Sort by"
             static let date = "Date"
             static let name = "Name"
+        }
+        
+        struct Sleep {
+            static let time = 3000
         }
     }
     
@@ -78,6 +86,10 @@ struct Constant {
     struct Error {
         static let badResponseMessage = "Bad response from the server"
         static let dataFailedMessage = "Data failed to unwrap"
-        static let parseStringToURLFailedMessage = "Resource name failed parsing into URL"
+        static let parseStringToURLFailedMessage = "Using wrong URL"
+    }
+    
+    struct WebManagerDelegate {
+        static let updated = "Updating..."
     }
 }
