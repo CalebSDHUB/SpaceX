@@ -14,7 +14,6 @@ final class LaunchScreenTableViewController: UITableViewController {
     
     private lazy var webManager: WebManager = {
         let webManager = WebManager.shared
-        let manager: Manager = webManager
         webManager.delegate = self
         return webManager
     }()
@@ -170,6 +169,5 @@ extension LaunchScreenTableViewController: UISearchBarDelegate {
             searchBar.text = ""
             searchController.isActive = false
         }
-        
     }
 }
