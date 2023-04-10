@@ -31,7 +31,7 @@ struct Constant {
     
     struct LaunchScreen {
         struct Title {
-            static let name = "SpaceX Launches"
+            static let name = "SpaceX Launch"
         }
         
         struct Cell {
@@ -47,6 +47,12 @@ struct Constant {
         struct Sleep {
             static let time = 3000
         }
+    }
+    
+    struct StartScreen {
+        static let spaceX = "SPACEX"
+        static let fontSize: CGFloat = 50
+        static let switchScreenDelay = 3000
     }
     
     struct View {
@@ -91,5 +97,9 @@ struct Constant {
     
     struct WebManagerDelegate {
         static let updated = "Updating..."
+    }
+    
+    struct BackgroundImage {
+        static let name = "spacex-launch-background"
     }
 }

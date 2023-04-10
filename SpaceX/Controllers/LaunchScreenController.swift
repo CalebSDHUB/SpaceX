@@ -20,13 +20,13 @@ final class LaunchScreenTableViewController: UITableViewController {
     
     private lazy var launchSortBarButtonItem: UIBarButtonItem = {
         let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(launchSortButtonPressed))
-        barbuttomItem.tintColor = .orange
+        barbuttomItem.tintColor = .primary
         return barbuttomItem
     }()
     
     private lazy var launchFilterBarButtonItem: UIBarButtonItem = {
         let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(launchRefreshButtonPressed))
-        barbuttomItem.tintColor = .orange
+        barbuttomItem.tintColor = .primary
         return barbuttomItem
     }()
     
@@ -98,7 +98,7 @@ extension LaunchScreenTableViewController {
             self.viewModelsOriginal = self.viewModelsCurrent
         })
         
-        alertController.view.tintColor = .orange
+        alertController.view.tintColor = .primary
         present(alertController, animated: true)
     }
     
