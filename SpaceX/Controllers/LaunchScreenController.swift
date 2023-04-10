@@ -110,7 +110,7 @@ extension LaunchScreenTableViewController {
 // MARK: - WebManagerDelegate
 
 extension LaunchScreenTableViewController: WebManagerDelegate {
-    func didUpdate(viewModels: [ViewModel]?, text: String, messageStatus: MessageStatus) {
+    func didUpdate(viewModels: [ViewModel]?, text: String, messageStatus: MessageStatusOption) {
         Task {
             if let viewModels,
                messageStatus == .normal {

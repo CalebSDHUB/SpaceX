@@ -17,7 +17,7 @@ class UIAnimationLabel: UILabel {
         super.init(coder: coder)
     }
     
-    func message(_ text: String, messageStatus: MessageStatus) {
+    func message(_ text: String, messageStatus: MessageStatusOption) {
         self.text = text
         self.textColor = messageStatus.uiColor
     }

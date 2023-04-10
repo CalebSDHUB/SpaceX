@@ -26,7 +26,7 @@ struct Constant {
     }
     
     struct ResourceName {
-        static var current: ResourceName = .web
+        static var current: ResourceNameOption = .web
     }
     
     struct LaunchScreen {

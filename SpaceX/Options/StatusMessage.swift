@@ -7,7 +7,7 @@
 
 import UIKit
 
-enum MessageStatus {
+enum MessageStatusOption {
     case normal, warning
     
     var uiColor: UIColor {

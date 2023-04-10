@@ -5,7 +5,7 @@
 //  Created by Caleb Danielsen on 10.04.2023.
 //
 
-enum ResourceName {
+enum ResourceNameOption {
     case web, file
     
     var resourceName: String {
