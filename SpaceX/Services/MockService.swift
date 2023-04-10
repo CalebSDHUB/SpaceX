@@ -10,6 +10,7 @@ final class MockWebservice: Service {
     static let shared: MockWebservice = MockWebservice()
     private init() {}
     
+    /// Fetching JSON from file
     func fetch(resourceName: String) async throws -> [ViewModel] {
             try await Task.sleep(for: Duration.milliseconds(200))
             let launchModels = try File.readJSON(type: [LaunchModel].self, resourceName: resourceName)

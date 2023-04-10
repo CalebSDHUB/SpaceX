@@ -5,9 +5,7 @@
 //  Created by Caleb Danielsen on 04.04.2023.
 //
 
-import Foundation
-
-/// Responsibility to delegate the fetched view models
+/// Responsibility to updating the view models by fetching
 final class Manager {
     var delegate: WebManagerDelegate?
     static let shared = Manager()
