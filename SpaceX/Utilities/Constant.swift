@@ -49,6 +49,12 @@ struct Constant {
         }
     }
     
+    struct StartScreen {
+        static let spaceX = "SPACEX"
+        static let fontSize: CGFloat = 50
+        static let switchScreenDelay = 3000
+    }
+    
     struct View {
         struct Logo {
             static let smallFormat: CGFloat = 25

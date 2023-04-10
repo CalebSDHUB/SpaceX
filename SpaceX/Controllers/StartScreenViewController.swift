@@ -16,8 +16,9 @@ class StartScreenViewController: UIViewController {
     
     private lazy var labelSpaceX: UILabel = {
         let label = UILabel()
-        label.text = "SPACEX"
-        label.font = UIFont.systemFont(ofSize: 50, weight: .bold)
+        label.text = Constant.StartScreen.spaceX
+        label.font = UIFont.systemFont(ofSize: Constant.StartScreen.fontSize, weight: .bold)
+        label.textColor = .white
         return label
     }()
     
@@ -44,7 +45,7 @@ class StartScreenViewController: UIViewController {
     
     private func switchScreen() {
         Task {
-            try await Task.sleep(for: Duration.milliseconds(3000))
+            try await Task.sleep(for: Duration.milliseconds(Constant.StartScreen.switchScreenDelay))
             navigationController?.setViewControllers([LaunchScreenTableViewController()], animated: true)
         }
     }
