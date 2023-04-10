@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-/// Reponsible for showing all past SpaceX launches
+/// Reponsible for showing the main SpaceX launch screen
 final class LaunchScreenTableViewController: UITableViewController {
     private var viewModelsOriginal: [ViewModel] = [] { didSet { tableView.reloadData() } }
     private var viewModelsCurrent: [ViewModel] = [] { didSet { tableView.reloadData() } }

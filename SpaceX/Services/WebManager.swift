@@ -17,7 +17,7 @@ final class WebManager: Manager {
     func update() {
         Task(priority: .background) {
             do {
-                let viewModels = try await ServiceFactory.create().fetch(resourceName: Constant.URL.spaceXapi)
+                let viewModels = try await ServiceFactory.create().fetch()
                 delegate?.didUpdate(viewModels: viewModels, text: Constant.WebManagerDelegate.updated, messageStatus: .normal)
             } catch {
                 delegate?.didUpdate(viewModels: nil, text: error.localizedDescription, messageStatus: .warning)

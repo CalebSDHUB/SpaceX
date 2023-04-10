@@ -82,7 +82,7 @@ struct Constant {
     struct Error {
         static let badResponseMessage = "Bad response from the server"
         static let dataFailedMessage = "Data failed to unwrap"
-        static let parseStringToURLFailedMessage = "Resource name failed parsing into URL"
+        static let parseStringToURLFailedMessage = "Using wrong URL"
     }
     
     struct WebManagerDelegate {

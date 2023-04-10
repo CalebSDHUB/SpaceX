@@ -13,9 +13,11 @@ import XCTest
 final class ServiceTest: XCTestCase {
     
     private var service: Service!
+    private var webManager: WebManager!
 
     override func setUp() {
         service = ServiceFactory.create()
+        webManager = WebManager.shared
     }
     override func tearDown() {}
     
@@ -27,5 +29,9 @@ final class ServiceTest: XCTestCase {
     func test_mock_service_falied() async {
         let launchViewModels = try? await service.fetch(resourceName: "wrong_resource_name")
         XCTAssertNil(launchViewModels)
+    }
+    
+    func test_refresh_event() {
+        webManager.update()
     }
 }
