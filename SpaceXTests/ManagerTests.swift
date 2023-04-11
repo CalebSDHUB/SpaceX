@@ -8,7 +8,7 @@
 import XCTest
 @testable import SpaceX
 
-final class ManagerTest: XCTestCase {
+final class ManagerTests: XCTestCase {
     private var manager: Manager!
     
     override func setUp() {

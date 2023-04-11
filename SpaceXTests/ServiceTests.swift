@@ -10,7 +10,7 @@ import XCTest
 
 /// IMPORTANT: Remember to activate -test in "Edit scheme" to use the MockService for unit test, instead of WebService.for unit test.
 /// The tests is only ment for the MockService, so failing to select -test will fail the test unwanted.
-final class ServiceTest: XCTestCase {
+final class ServiceTests: XCTestCase {
     private var service: Service!
 
     override func setUp() {
