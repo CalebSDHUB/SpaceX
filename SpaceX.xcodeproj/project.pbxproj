@@ -41,7 +41,6 @@
 		A5C06C3E29D8ADF100A81002 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3D29D8ADF100A81002 /* SceneDelegate.swift */; };
 		A5C06C4029D8ADF100A81002 /* LaunchScreenController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C3F29D8ADF100A81002 /* LaunchScreenController.swift */; };
 		A5C06C5329D8ADF200A81002 /* ServiceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C5229D8ADF200A81002 /* ServiceTests.swift */; };
-		A5C06C5D29D8ADF200A81002 /* SpaceXUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C5C29D8ADF200A81002 /* SpaceXUITests.swift */; };
 		A5C06C6D29D9780800A81002 /* LaunchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C6C29D9780800A81002 /* LaunchModel.swift */; };
 		A5C06C7329D9876800A81002 /* LaunchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06C7229D9876800A81002 /* LaunchViewModel.swift */; };
 		A5C06DB529E20FD200EC5F4B /* NameFilterStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DB429E20FD200EC5F4B /* NameFilterStrategy.swift */; };
@@ -112,7 +111,6 @@
 		A5C06C4E29D8ADF200A81002 /* SpaceXTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A5C06C5229D8ADF200A81002 /* ServiceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceTests.swift; sourceTree = "<group>"; };
 		A5C06C5829D8ADF200A81002 /* SpaceXUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpaceXUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		A5C06C5C29D8ADF200A81002 /* SpaceXUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpaceXUITests.swift; sourceTree = "<group>"; };
 		A5C06C6C29D9780800A81002 /* LaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchModel.swift; sourceTree = "<group>"; };
 		A5C06C7229D9876800A81002 /* LaunchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewModel.swift; sourceTree = "<group>"; };
 		A5C06DB429E20FD200EC5F4B /* NameFilterStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameFilterStrategy.swift; sourceTree = "<group>"; };
@@ -269,7 +267,6 @@
 			children = (
 				A5C06C3A29D8ADF100A81002 /* SpaceX */,
 				A5C06C5129D8ADF200A81002 /* SpaceXTests */,
-				A5C06C5B29D8ADF200A81002 /* SpaceXUITests */,
 				A5C06C3929D8ADF100A81002 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -315,14 +312,6 @@
 				A5C06DEF29E5D86300EC5F4B /* ManagerTests.swift */,
 			);
 			path = SpaceXTests;
-			sourceTree = "<group>";
-		};
-		A5C06C5B29D8ADF200A81002 /* SpaceXUITests */ = {
-			isa = PBXGroup;
-			children = (
-				A5C06C5C29D8ADF200A81002 /* SpaceXUITests.swift */,
-			);
-			path = SpaceXUITests;
 			sourceTree = "<group>";
 		};
 		A5C06C6B29D9758500A81002 /* Models */ = {
@@ -565,7 +554,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5C06C5D29D8ADF200A81002 /* SpaceXUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
