@@ -5,7 +5,7 @@
 //  Created by Caleb Danielsen on 08.04.2023.
 //
 
-/// Responsible for setting and executing the current strategy using the Strategy Design Pattern
+/// Responsible for setting and executing the current filter strategy using the Strategy Design Pattern
 final class Filter {
     static private var strategy: FilterStrategy!
     private init() {}

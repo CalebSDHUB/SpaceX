@@ -21,12 +21,14 @@ final class LaunchScreenTableViewController: UITableViewController {
     private lazy var launchSortBarButtonItem: UIBarButtonItem = {
         let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(launchSortButtonPressed))
         barbuttomItem.tintColor = .primary
+        barbuttomItem.accessibilityIdentifier = "sort"
         return barbuttomItem
     }()
     
-    private lazy var launchFilterBarButtonItem: UIBarButtonItem = {
+    private lazy var launchRefreshBarButtonItem: UIBarButtonItem = {
         let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(launchRefreshButtonPressed))
         barbuttomItem.tintColor = .primary
+        barbuttomItem.accessibilityIdentifier = "refresh"
         return barbuttomItem
     }()
     
@@ -55,7 +57,7 @@ extension LaunchScreenTableViewController {
     private func setupUI() {
         title = Constant.LaunchScreen.Title.name
         navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.leftBarButtonItem = launchFilterBarButtonItem
+        navigationItem.leftBarButtonItem = launchRefreshBarButtonItem
         navigationItem.rightBarButtonItem = launchSortBarButtonItem
         navigationItem.searchController = searchController
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: Constant.LaunchScreen.Cell.identifier)

@@ -5,8 +5,6 @@
 //  Created by Caleb Danielsen on 02.04.2023.
 //
 
-import Foundation
-
 struct LaunchModel: Decodable {
     let fairings: Fairings?
     let links: Links?

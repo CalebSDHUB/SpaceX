@@ -42,8 +42,6 @@ struct DetailView: View {
                     ContentView(title: launchViewModel.failureDetail.capitalizingFirstLetter())
                 }
             }
-            
-            
         }
         .font(.headline)
         .accentColor(.blue)
