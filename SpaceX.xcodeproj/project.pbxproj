@@ -54,6 +54,7 @@
 		A5C06DEA29E46B4800EC5F4B /* ResourceName.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DE929E46B4800EC5F4B /* ResourceName.swift */; };
 		A5C06DEC29E47B0F00EC5F4B /* StartScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DEB29E47B0F00EC5F4B /* StartScreenViewController.swift */; };
 		A5C06DEE29E4853B00EC5F4B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5C06DED29E4853B00EC5F4B /* Assets.xcassets */; };
+		A5C06DF029E5D86300EC5F4B /* ManagerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A5C06DEF29E5D86300EC5F4B /* ManagerTest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -125,6 +126,7 @@
 		A5C06DE929E46B4800EC5F4B /* ResourceName.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourceName.swift; sourceTree = "<group>"; };
 		A5C06DEB29E47B0F00EC5F4B /* StartScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScreenViewController.swift; sourceTree = "<group>"; };
 		A5C06DED29E4853B00EC5F4B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A5C06DEF29E5D86300EC5F4B /* ManagerTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerTest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,6 +314,7 @@
 			isa = PBXGroup;
 			children = (
 				A5C06C5229D8ADF200A81002 /* ServiceTest.swift */,
+				A5C06DEF29E5D86300EC5F4B /* ManagerTest.swift */,
 			);
 			path = SpaceXTests;
 			sourceTree = "<group>";
@@ -557,6 +560,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5C06C5329D8ADF200A81002 /* ServiceTest.swift in Sources */,
+				A5C06DF029E5D86300EC5F4B /* ManagerTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

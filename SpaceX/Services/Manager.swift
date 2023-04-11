@@ -8,6 +8,7 @@
 /// Responsibility to updating the view models by fetching
 final class Manager {
     var delegate: WebManagerDelegate?
+    var service: Service?
     static let shared = Manager()
     private init() {}
     
@@ -15,8 +16,11 @@ final class Manager {
     func update() {
         Task(priority: .background) {
             do {
-                let viewModels = try await ServiceFactory.create().fetch(resourceName: Constant.ResourceName.current.resourceName)
-                delegate?.didUpdate(viewModels: viewModels, text: Constant.WebManagerDelegate.updated, messageStatus: .normal)
+                service = ServiceFactory.create()
+                if let service {
+                    let viewModels = try await service.fetch(resourceName: Constant.ResourceName.current.resourceName)
+                    delegate?.didUpdate(viewModels: viewModels, text: Constant.WebManagerDelegate.updated, messageStatus: .normal)
+                }
             } catch {
                 delegate?.didUpdate(viewModels: nil, text: error.localizedDescription, messageStatus: .warning)
             }

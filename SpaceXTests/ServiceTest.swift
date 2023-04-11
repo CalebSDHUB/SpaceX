@@ -12,14 +12,13 @@ import XCTest
 /// The tests is only ment for the MockService, so failing to select -test will fail the test unwanted.
 final class ServiceTest: XCTestCase {
     private var service: Service!
-    private var manager: Manager!
 
     override func setUp() {
         service = ServiceFactory.create()
     }
     override func tearDown() {}
     
-    func test_mock_service_successful() async {
+    func test_mock_service_successful() async throws {
         let launchViewModels = try? await service.fetch(resourceName: Constant.File.FileName.spaceXLaunch)
         XCTAssertNotNil(launchViewModels)
     }
