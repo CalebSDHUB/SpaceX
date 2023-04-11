@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "spacex-launch-narrow.jpeg",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
