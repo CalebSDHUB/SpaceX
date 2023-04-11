@@ -21,14 +21,12 @@ final class LaunchScreenTableViewController: UITableViewController {
     private lazy var launchSortBarButtonItem: UIBarButtonItem = {
         let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(launchSortButtonPressed))
         barbuttomItem.tintColor = .primary
-        barbuttomItem.accessibilityIdentifier = "sort"
         return barbuttomItem
     }()
     
     private lazy var launchRefreshBarButtonItem: UIBarButtonItem = {
         let barbuttomItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(launchRefreshButtonPressed))
         barbuttomItem.tintColor = .primary
-        barbuttomItem.accessibilityIdentifier = "refresh"
         return barbuttomItem
     }()
     
